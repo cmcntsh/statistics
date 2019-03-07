@@ -1,0 +1,52 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+data <- read.csv(file.choose())
+```
+```{r}
+names(data)
+```
+
+```{r}
+colnames(data)[1] <- "nominal"
+```
+```{r}
+class(data)
+class(data$nominal)
+levels(data$nominal)
+class(data$ordinal)
+levels(data$ordinal)
+class(data$interval)
+class(data$ratio)
+```
+```{r}
+data$ordinal <- factor(data$ordinal, ordered=TRUE, levels = c("first","second","third","fourth"))
+```
+
+```{r}
+library(summarytools)
+view(dfSummary(data))
+```
+```{r}
+library(Hmisc)
+var.labels <- c(nominal="sex", ordinal="birth order",interval="temperature in Celsius", ratio="height in inches")
+label(data) = as.list(var.labels[match(names(data),names(var.labels))])
+```
+
+```{r}
+class(Week1)
+```
+
+```{r}
+boxplot(data$interval)
+boxplot(data$ratio)
+plot(data$interval,data$ratio)
+```
+```{r}
+data$height_z <- scale(data$ratio,center=TRUE,scale=TRUE)
+data$temp_z <- scale(data$interval,center=TRUE,scale=TRUE)
+```
+
