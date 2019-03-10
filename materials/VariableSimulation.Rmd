@@ -1,0 +1,196 @@
+---
+title: "Simulating Variables (nominal, ordinal, interval, ratio, factors w/ outcome, correlated)"
+output: html_notebook
+---
+
+```{r}
+# simulating nominal data
+
+# set number of participants
+n = 40
+
+# generate data
+A = c(rep(c("male"), n/2), rep(c("female"), n/2)) # '0' n/2 times, '1' n/2 times
+
+# add to dataframe
+df = data.frame(cbind(A))
+
+# check it out
+class(df$A)
+df$A
+```
+
+```{r}
+# smulating ordinal data
+
+# set number of participants
+n = 30
+
+# list of category names
+names = list("uno", "due", "tre")
+
+# generate data
+B = c(rep(c(paste(names[1])), n/3), rep(c(paste(names[2])), n/3), rep(c(paste(names[3])), n/3)) # '0' n/3 times, '1' n/3 times, '2' n/3 times
+
+# add to dataframe
+df = data.frame(cbind(B))
+
+# order the factors to be the same as the original list
+df$B <- ordered(df$B, levels = c(paste(names[1]), paste(names[2]), paste(names[3])))
+
+# check it out
+class(df$B)
+df$B
+```
+
+```{r}
+# simulating interval data
+
+```
+
+```{r}
+# simulating ratio data
+# This is done by running a regression in reverse. Could try without any predictors (just mean and error)
+# simulate outcome with 1 predictor (1-way ANOVA)
+
+# set total participants
+n = 40
+
+# Set coefficients
+alpha = 66
+beta1 = 1.5
+sde = 2 # standard deviation of the errors (values 1-3 seems to work well)
+
+# Generate 200 trials
+A = c(rep(c(0), n/2), rep(c(1), n/2)) # '0' n/2 times, '1' n/2 times
+e = rnorm(n, 0, sd=sde) # Random noise, with standard deviation of 1
+
+# Generate your data using the regression equation
+y = alpha + beta1*A + e
+
+# Join the variables in a data frame
+data = data.frame(cbind(A, y))
+
+# Fit an ANOVA
+modelA = aov(y ~ A, data=data)
+summary(modelA)
+
+
+
+```
+
+```{r}
+# simulating correlated data
+
+# this comes from https://stat.ethz.ch/pipermail/r-help/2007-April/128925.html
+
+# create the initial x variable
+x1 <- rnorm(100, 15, 5)
+
+# x2, x3, and x4 in a matrix, these will be modified to meet the criteria
+x234 <- scale(matrix( rnorm(300), ncol=3 ))
+
+# put all into 1 matrix for simplicity
+x1234 <- cbind(scale(x1),x234)
+
+# find the current correlation matrix
+c1 <- var(x1234)
+
+# cholesky decomposition to get independence
+chol1 <- solve(chol(c1))
+
+newx <-  x1234 %*% chol1 
+
+# check that we have independence and x1 unchanged
+zapsmall(cor(newx))
+all.equal( x1234[,1], newx[,1] )
+
+# create new correlation structure (zeros can be replaced with other rvals)
+newc <- matrix( 
+c(1  , 0.4, 0.5, 0.6, 
+  0.4, 1  , 0  , 0  ,
+  0.5, 0  , 1  , 0  ,
+  0.6, 0  , 0  , 1  ), ncol=4 )
+
+# check that it is positive definite
+eigen(newc)
+
+chol2 <- chol(newc)
+
+finalx <- newx %*% chol2 * sd(x1) + mean(x1)
+
+# verify success
+mean(x1)
+colMeans(finalx)
+
+sd(x1)
+apply(finalx, 2, sd)
+
+zapsmall(cor(finalx))
+pairs(finalx)
+
+all.equal(x1, finalx[,1])
+
+xframe = as.data.frame(finalx)
+
+```
+
+```{r}
+# left skewed
+hist(rbeta(10000,5,2))
+
+# right skewed
+hist(rbeta(10000,2,5))
+
+# normal
+hist(rbeta(10000,5,5))
+```
+
+
+```{r}
+# simulating positive skewed data
+
+N <- 10000
+ x <- rnbinom(N, 8, .5)
+ hist(x, 
+ xlim=c(min(x),max(x)), probability=T, nclass=max(x)-min(x)+1, 
+   col='lightblue', xlab=' ', ylab=' ', axes=F,
+   main='Positive Skewed')
+lines(density(x,bw=1), col='red', lwd=3)
+```
+
+```{r}
+# simulate outcome with 2 predictors and significant interaction (2-way ANOVA)
+
+# set total participants
+n = 40
+
+# Set coefficients
+alpha = 66
+beta1 = 1.5
+beta2 = 2
+beta3 = 2
+sde = 2 # standard deviation of the errors (values 1-3 seems to work well)
+
+# Generate 200 trials
+A = c(rep(c(0), n/2), rep(c(1), n/2)) # '0' n/2 times, '1' n/2 times
+B = rep(c(rep(c(0), n/4), rep(c(1), n/4)), 2) # '0'x n/4, '1'x n/4, '0'x n/4, '1'x n/4
+e = rnorm(n, 0, sd=sde) # Random noise, with standard deviation of 1
+
+# Generate your data using the regression equation
+y = alpha + beta1*A + beta2*B + beta3*A*B + e
+
+# Join the variables in a data frame
+data = data.frame(cbind(A, B, y))
+
+# Fit an ANOVA
+model = aov(y ~ A*B, data=data)
+summary(model)
+
+modelA = aov(y ~ A, data=data)
+summary(modelA)
+
+modelB = aov(y ~ B, data=data)
+summary(modelB)
+```
+
