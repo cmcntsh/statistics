@@ -87,6 +87,33 @@ x
 prop.table(table(x))
 ```
 
+```{r}
+# simulate Likert-type data measuring latent continuous variable
+
+set.seed(8649)     # this makes the example exactly reproducible
+N      = 10        # this is how much data I'll generate
+latent = rnorm(N)  # this is the actual latent variable I want to be measureing
+
+##### generate latent responses to items
+item1 = latent + rnorm(N, mean=0, sd=0.2)  # the strongest correlate
+item2 = latent + rnorm(N, mean=0, sd=0.3)
+item3 = latent + rnorm(N, mean=0, sd=0.5)
+item4 = latent + rnorm(N, mean=0, sd=1.0)
+item5 = latent + rnorm(N, mean=0, sd=1.2)  # the weakest
+
+##### convert latent responses to ordered categories
+item1 = findInterval(item1, vec=c(-Inf,-2.5,-1, 1,2.5,Inf))  # fairly unbiased
+item2 = findInterval(item2, vec=c(-Inf,-2.5,-1, 1,2.5,Inf))
+item3 = findInterval(item3, vec=c(-Inf,-3,  -2, 2,3,  Inf))  # middle values typical
+item4 = findInterval(item4, vec=c(-Inf,-3,  -2, 2,3,  Inf))
+item5 = findInterval(item5, vec=c(-Inf,-3.5,-3,-1,0.5,Inf))  # high ratings typical
+
+##### combined into final scale
+manifest = round(rowMeans(cbind(item1, item2, item3, item4, item5)), 1)
+manifest
+cor(manifest, latent)
+```
+
 
 ```{r}
 # simulating correlated data
