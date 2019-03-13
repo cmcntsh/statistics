@@ -1,0 +1,25 @@
+Question
+========
+x=2 and x<-2 mean the same thing in R.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01016R
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

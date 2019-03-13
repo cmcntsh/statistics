@@ -1,0 +1,25 @@
+Question
+========
+In correlational research we observe what happens without interfering.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01089valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

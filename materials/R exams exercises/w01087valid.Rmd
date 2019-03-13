@@ -1,0 +1,25 @@
+Question
+========
+We need to be valid to be reliable.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01087valid
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

@@ -1,0 +1,25 @@
+Question
+========
+Rstudio needs R to run.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01013R
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

@@ -1,0 +1,25 @@
+Question
+========
+The purpose of statistics is to make things more complicated.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01001stats
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

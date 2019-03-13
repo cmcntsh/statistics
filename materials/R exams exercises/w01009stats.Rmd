@@ -1,0 +1,25 @@
+Question
+========
+Numbers should be presented in units that are meaningful for the reader.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01009stats
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

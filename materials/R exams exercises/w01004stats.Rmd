@@ -1,0 +1,25 @@
+Question
+========
+Statistics are used in many places in real life.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01004stats
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

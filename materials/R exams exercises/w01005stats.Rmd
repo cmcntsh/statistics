@@ -1,0 +1,25 @@
+Question
+========
+Statistics are only used in obscure academic journals.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01005stats
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

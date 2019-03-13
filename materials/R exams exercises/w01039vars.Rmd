@@ -1,0 +1,25 @@
+Question
+========
+A variable can only have a single value.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01039vars
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

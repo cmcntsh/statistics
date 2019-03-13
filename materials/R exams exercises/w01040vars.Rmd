@@ -1,0 +1,25 @@
+Question
+========
+An independent variable is the variable that is being manipulated.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01040vars
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

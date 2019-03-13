@@ -1,0 +1,25 @@
+Question
+========
+When collecting data for research, it doesn't matter what level of measurement is used.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01064LoM
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

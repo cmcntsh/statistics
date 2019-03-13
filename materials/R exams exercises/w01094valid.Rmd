@@ -1,0 +1,25 @@
+Question
+========
+Randomization is one way we try to reduce unsystematic variation.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01094valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

@@ -1,0 +1,25 @@
+Question
+========
+You can import data sets into Rstudio by using the File - Import Dataset menu.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01022R
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

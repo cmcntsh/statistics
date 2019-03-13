@@ -1,0 +1,25 @@
+Question
+========
+Another name for an indepent variable (IV) is a predictor variable.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01072vars
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

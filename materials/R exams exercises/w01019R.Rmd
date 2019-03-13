@@ -1,0 +1,25 @@
+Question
+========
+R is not case sensitive.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01019R
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

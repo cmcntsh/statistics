@@ -1,0 +1,25 @@
+Question
+========
+Unsystematic variation is when variation happens by chance.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01092valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

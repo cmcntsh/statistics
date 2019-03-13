@@ -1,0 +1,25 @@
+Question
+========
+It's not important to have a good understand of how statistics work.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01007stats
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

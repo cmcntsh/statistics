@@ -1,0 +1,25 @@
+Question
+========
+Statistics can be used to lie.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01002stats
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

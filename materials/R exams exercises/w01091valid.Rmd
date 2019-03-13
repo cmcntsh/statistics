@@ -1,0 +1,25 @@
+Question
+========
+Longitudinal research measures at multiple points in time.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01091valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

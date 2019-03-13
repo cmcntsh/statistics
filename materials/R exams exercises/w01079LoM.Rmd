@@ -1,0 +1,25 @@
+Question
+========
+Ratio level of measurement is continuous.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01079LoM
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

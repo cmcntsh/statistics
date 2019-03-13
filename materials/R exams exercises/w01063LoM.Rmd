@@ -1,0 +1,25 @@
+Question
+========
+When collecting data for research it is a good idea to collect it in the highest level of measurement possible.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01063LoM
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

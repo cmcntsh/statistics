@@ -1,0 +1,25 @@
+Question
+========
+Reliability means measuring what you intend to measure.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01026valid
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

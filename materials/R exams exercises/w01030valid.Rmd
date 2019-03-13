@@ -1,0 +1,25 @@
+Question
+========
+reliability means being inconsistent.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01030valid
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

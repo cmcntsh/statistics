@@ -1,0 +1,25 @@
+Question
+========
+R is free stastical software.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01012R
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

@@ -1,0 +1,25 @@
+Question
+========
+Reliability means getting consistent results.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01029valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

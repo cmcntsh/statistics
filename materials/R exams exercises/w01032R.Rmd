@@ -1,0 +1,25 @@
+Question
+========
+The c() function in R is for concatenating things together.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01032R
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

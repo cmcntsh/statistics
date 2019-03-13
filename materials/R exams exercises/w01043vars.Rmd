@@ -1,0 +1,25 @@
+Question
+========
+A dependent variable is the one that is manipulated.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01043vars
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

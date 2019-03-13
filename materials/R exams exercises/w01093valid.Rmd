@@ -1,0 +1,25 @@
+Question
+========
+Systematic variation is when things happen because of manipulation.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01093valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

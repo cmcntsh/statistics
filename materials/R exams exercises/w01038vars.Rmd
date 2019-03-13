@@ -1,0 +1,25 @@
+Question
+========
+A variable is a proberty that can take on many values.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01038vars
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

@@ -1,0 +1,25 @@
+Question
+========
+You don't need to be accurate to have validity.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01028valid
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

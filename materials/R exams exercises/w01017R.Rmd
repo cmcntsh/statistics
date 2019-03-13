@@ -1,0 +1,25 @@
+Question
+========
+Object names in R must begin with a letter (not a number).
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01017R
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

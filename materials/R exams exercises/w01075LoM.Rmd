@@ -1,0 +1,25 @@
+Question
+========
+Continuous variables are made up of numbers.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01075LoM
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

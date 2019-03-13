@@ -1,0 +1,25 @@
+Question
+========
+Statistics are used to help test theories.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01069stats
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

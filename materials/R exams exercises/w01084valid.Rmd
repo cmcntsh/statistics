@@ -1,0 +1,25 @@
+Question
+========
+Validity means we measure what we intend to measure.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01084valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

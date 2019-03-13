@@ -1,0 +1,25 @@
+Question
+========
+R is only for programming. It can't do simple math.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01015R
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

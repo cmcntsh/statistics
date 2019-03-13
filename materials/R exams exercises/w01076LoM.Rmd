@@ -1,0 +1,25 @@
+Question
+========
+Nominal level of measurement is categorical.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01076LoM
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

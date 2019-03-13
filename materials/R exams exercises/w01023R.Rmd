@@ -1,0 +1,25 @@
+Question
+========
+R indicates missing values by displaying the letters "NA".
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01023R
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

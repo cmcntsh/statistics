@@ -1,0 +1,25 @@
+Question
+========
+Another name for a dependent variable (DV) is an outcome variable.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01073vars
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

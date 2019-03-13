@@ -1,0 +1,25 @@
+Question
+========
+A variable we think is an EFFECT is called a DEPENDENT variable or DV for short.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01071vars
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

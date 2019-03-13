@@ -1,0 +1,25 @@
+Question
+========
+Validity is akin to consistently hitting the bullseye on a target.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01031valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

@@ -1,0 +1,25 @@
+Question
+========
+A dependent variable is the one that is changing and is being measured.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01042vars
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

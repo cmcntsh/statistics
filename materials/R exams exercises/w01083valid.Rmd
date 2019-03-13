@@ -1,0 +1,25 @@
+Question
+========
+Assessing reliability is one way we try to reduce measurement error.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01083valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

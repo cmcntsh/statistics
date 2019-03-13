@@ -1,0 +1,25 @@
+Question
+========
+In experimental research we manipulate one variable to see the effect on another.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01088valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

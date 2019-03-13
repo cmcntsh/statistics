@@ -1,0 +1,25 @@
+Question
+========
+An independent variable is the one that is changing and is being measured.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01041vars
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

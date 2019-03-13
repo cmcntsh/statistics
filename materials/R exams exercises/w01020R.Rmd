@@ -1,0 +1,25 @@
+Question
+========
+Putting a number sign (#) at the beginning of a line turns it into a comment in R and R will ignore that line.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01020R
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

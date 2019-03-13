@@ -1,0 +1,25 @@
+Question
+========
+Categorical variables are made up of categories.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01074LoM
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

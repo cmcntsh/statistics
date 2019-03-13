@@ -1,0 +1,25 @@
+Question
+========
+Understanding how statistics work helps us ask good questions about studies and research.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01006stats
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

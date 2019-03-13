@@ -1,0 +1,25 @@
+Question
+========
+Reliability means we measure consistently (the same way every time).
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01085valid
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

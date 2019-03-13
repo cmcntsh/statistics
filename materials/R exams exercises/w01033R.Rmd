@@ -1,0 +1,25 @@
+Question
+========
+The c() function in R is for splitting things apart.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01033R
+extype: mchoice
+exsolution: 01
+exshuffle: TRUE

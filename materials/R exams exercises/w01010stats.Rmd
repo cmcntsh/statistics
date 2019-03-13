@@ -1,0 +1,25 @@
+Question
+========
+Extremely unlikely things can happen just by chance.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01010stats
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE

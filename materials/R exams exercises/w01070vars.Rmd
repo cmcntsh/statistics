@@ -1,0 +1,25 @@
+Question
+========
+A variable we think is a CAUSE is called an INDEPENDENT variable or IV for short.
+
+Answerlist
+----------
+* True
+* False
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01070vars
+extype: mchoice
+exsolution: 10
+exshuffle: TRUE
