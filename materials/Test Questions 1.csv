@@ -1,0 +1,5 @@
+MC,Multiple Choice 001,1,What does multiple choice look like?,1,choice 1,choice 2,choice 3,choice 4,choice 5
+TF,True False 002,2,What does true false look like?,TRUE,,,,,
+MR,Multiple Response 003,3,What does multiple response look like?,"1,2,3",choice 1,choice 2,choice 3,choice 4,choice 5
+FB,Fill in the Blank 004,4,What does fill in the blank look like?,"""1,2,3""",blank,BLANK,Blank,,
+ES,Essay 005,5,What does essay look like?,,,,,,
