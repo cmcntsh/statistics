@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called potassium mEq/L where measurements look like 149, 150, 152, 154, etc.?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* False.
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01122LoM
+extype: mchoice
+exsolution: 00010
+exshuffle: TRUE

@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called height in inches where measurements look like 62, 63.5, 65, 70.25, 80, etc.?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* False.
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01116LoM
+extype: mchoice
+exsolution: 00010
+exshuffle: TRUE

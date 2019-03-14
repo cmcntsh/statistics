@@ -1,0 +1,39 @@
+Question
+========
+Which of the following are mathematical operators used in R? (select all that apply)
+
+Answerlist
+----------
+* + (plus)
+* - (minus)
+* * (mulitply)
+* / (divide)
+* ^ or ** (exponent)
+* add()
+* subtract()
+* divide()
+* power()
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* True.
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01034R
+extype: mchoice
+exsolution: 111110000
+exshuffle: TRUE

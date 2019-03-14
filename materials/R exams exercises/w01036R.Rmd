@@ -1,0 +1,29 @@
+Question
+========
+What is a data frame in R?
+
+Answerlist
+----------
+* It is a structure for storing data sets.
+* It is used for displaying graphical data.
+* There is not such thing in R.
+* It is a convenient way to group study data used for an analysis.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w01036R
+extype: mchoice
+exsolution: 1001
+exshuffle: TRUE

@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called total depression score where measurements look like 35, 37, 39, 42, 45, etc.?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* False.
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01113LoM
+extype: mchoice
+exsolution: 00100
+exshuffle: TRUE

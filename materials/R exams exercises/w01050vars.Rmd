@@ -1,0 +1,27 @@
+Question
+========
+In a study testing the effectiveness of a medication to increase endurance during exercise participants are divided into a control group (which receives a placebo) and a medication group (which receives the medication) and their time able to exercise are measured after 6 months. What type of variable is group?
+
+Answerlist
+----------
+* independent variable
+* dependent variable
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01050vars
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

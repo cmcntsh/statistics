@@ -1,0 +1,39 @@
+Question
+========
+Which of the following are logical operators used in R? (select all that apply)
+
+Answerlist
+----------
+* < and >
+* <= and >=
+* == (exactly equal to)
+* != (not equal to)
+* x|y (x OR y)
+* x&y (x AND y)
+* @ (at)
+* ^ (only if)
+* # (hash tag)
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* True.
+* True.
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01035R
+extype: mchoice
+exsolution: 111111000
+exshuffle: TRUE

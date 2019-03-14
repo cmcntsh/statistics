@@ -1,0 +1,27 @@
+Question
+========
+In a study testing the differences in how much men and women love music, participants are divided into groups by sex (male or female) and are administered a questionnaire which measures love of music. What type of variable is score on the questionnaire?
+
+Answerlist
+----------
+* independent variable
+* dependent variable
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01049vars
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

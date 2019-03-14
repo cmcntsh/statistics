@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called sodium mmol/L where measurements look like 132, 135, 138, etc.?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* False.
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01121LoM
+extype: mchoice
+exsolution: 00010
+exshuffle: TRUE

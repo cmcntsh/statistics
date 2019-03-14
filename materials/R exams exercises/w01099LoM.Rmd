@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called type of delivery where measurements look like vaginal, cesarean, vbac, etc.?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01099LoM
+extype: mchoice
+exsolution: 10000
+exshuffle: TRUE

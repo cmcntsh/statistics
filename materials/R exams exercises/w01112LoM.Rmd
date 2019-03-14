@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called temperature in Celsius where measurements look like 36, 36.5, 37, 38. etc.?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* False.
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01112LoM
+extype: mchoice
+exsolution: 00100
+exshuffle: TRUE

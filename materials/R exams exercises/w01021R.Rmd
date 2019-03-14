@@ -1,0 +1,31 @@
+Question
+========
+What symbol is used to make a comment in R?
+
+Answerlist
+----------
+* #
+* $
+* !
+* @
+* *
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01021R
+extype: mchoice
+exsolution: 10000
+exshuffle: TRUE

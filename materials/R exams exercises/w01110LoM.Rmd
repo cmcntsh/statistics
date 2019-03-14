@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called frequency where measurements look like never, rarely, occasionally, sometimes, often, usually, every time?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01110LoM
+extype: mchoice
+exsolution: 01000
+exshuffle: TRUE

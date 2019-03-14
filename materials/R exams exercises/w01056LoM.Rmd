@@ -1,0 +1,39 @@
+Question
+========
+What are characteristics of ordinal level of measurement?
+
+Answerlist
+----------
+* It is the next to lowest level of measurement.
+* It divides observations into groups.
+* There is a specified order
+* This is a type of categorical variable.
+* Categories are mutually exclusive.
+* Ratios can be formed from numbers on this scale.
+* There is a known consistent distance between measurement points
+* It is the next to highest level of measurement.
+* This is a type of continuous variable.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* True.
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01056LoM
+extype: mchoice
+exsolution: 111110000
+exshuffle: TRUE

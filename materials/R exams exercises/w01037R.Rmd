@@ -1,0 +1,33 @@
+Question
+========
+What are characteristics of a data fram in R?
+
+Answerlist
+----------
+* Rows usually contain observations.
+* Columns usually contain variables.
+* Data frames can contain variables of different data types. (e.g. numbers or strings)
+* Only one variable can be stored in a data frame.
+* Only data for one person can be stored in a data frame.
+* Variables in a data frame can't be used in a statistical analysis.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01037R
+extype: mchoice
+exsolution: 111000
+exshuffle: TRUE

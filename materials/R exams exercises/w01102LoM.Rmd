@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called college major where measurements look like science, humanities, mathematics, etc.?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01102LoM
+extype: mchoice
+exsolution: 10000
+exshuffle: TRUE

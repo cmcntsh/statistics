@@ -1,0 +1,31 @@
+Question
+========
+How does R indicate missing values by default?
+
+Answerlist
+----------
+* NA
+* missing
+* -99
+* blank
+* !
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01024R
+extype: mchoice
+exsolution: 10000
+exshuffle: TRUE

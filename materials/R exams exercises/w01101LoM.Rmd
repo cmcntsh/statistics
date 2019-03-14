@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called method of transport where measurements look like personal vehicle, ambulance, air transport?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01101LoM
+extype: mchoice
+exsolution: 10000
+exshuffle: TRUE

@@ -1,0 +1,27 @@
+Question
+========
+In a study testing the effectiveness of an ADHD medication participants are divided into a control group (which receives a placebo) and a medication group (which receives the medication) and their time able to focus on a topic are measured after 6 months. What type of variable is time?
+
+Answerlist
+----------
+* independent variable
+* dependent variable
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01047vars
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

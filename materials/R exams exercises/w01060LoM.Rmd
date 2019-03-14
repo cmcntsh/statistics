@@ -1,0 +1,39 @@
+Question
+========
+What is true of ordinal level data?
+
+Answerlist
+----------
+* The appropriate descriptive statistics are frequency and percent.
+* These can be graphed using bar charts or pie charts.
+* The distance between rankings is unknown.
+* All nominal level tests can be performed.
+* The median and the mode are meaningful measures of central tendency.
+* The appropriate descriptive statistics are mean and standard deviation.
+* Usually psychometric measurements.
+* Usually physical measurements.
+* Multiplication and division may be performed.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* True.
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01060LoM
+extype: mchoice
+exsolution: 111110000
+exshuffle: TRUE

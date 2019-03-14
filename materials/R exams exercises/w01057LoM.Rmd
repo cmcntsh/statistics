@@ -1,0 +1,33 @@
+Question
+========
+What are characteristics of interval level of measurement?
+
+Answerlist
+----------
+* It is the next to highest level of measurement.
+* There is a known consistent distance between measurement points
+* The zero point on the scale is not numerically meaningful.
+* Meaningful ratios can't be formed using numbers on this scale.
+* This is a type of continuous variable.
+* This level of measurement can be transformed to a lower level of measurement.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* True.
+* True.
+* True.
+
+
+Meta-information
+================
+exname: w01057LoM
+extype: mchoice
+exsolution: 111111
+exshuffle: TRUE

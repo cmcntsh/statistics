@@ -1,0 +1,39 @@
+Question
+========
+What is true of ratio level data?
+
+Answerlist
+----------
+* The appropriate descriptive statistics are mean and standard deviation.
+* The mean, median, and mode are meaningful measures of central tendency.
+* Addition and subtraction may be performed.
+* Multiplication and division may be performed.
+* Usually physical measurements.
+* Usually psychometric measurements.
+* The distance between measurement points is unknown and inconsistent.
+* It is a categorical variable.
+* It is the lowest level of measurment.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* True.
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01062LoM
+extype: mchoice
+exsolution: 111110000
+exshuffle: TRUE

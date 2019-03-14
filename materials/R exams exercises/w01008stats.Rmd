@@ -1,0 +1,29 @@
+Question
+========
+What is numeracy?
+
+Answerlist
+----------
+* Understanding how numbers relate to real life.
+* Numeracy is a way to predict the future.
+* It's going with your gut.
+* Numeracy is a way to speak with the dead.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01008stats
+extype: mchoice
+exsolution: 1000
+exshuffle: TRUE

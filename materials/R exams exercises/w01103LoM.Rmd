@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called birth order where measurements look like first, second, third, etc.?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01103LoM
+extype: mchoice
+exsolution: 01000
+exshuffle: TRUE

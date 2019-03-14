@@ -1,0 +1,39 @@
+Question
+========
+What is true of interval level data?
+
+Answerlist
+----------
+* The appropriate descriptive statistics are mean and standard deviation.
+* The mean, median, and mode are meaningful measures of central tendency.
+* Zero is arbitrary.
+* Addition and subtraction may be performed.
+* Multiplication and division are not really appropriate.
+* Usually psychometric measurements.
+* The distance between measurement points is unknown and inconsistent.
+* It is a categorical variable.
+* It is the next to lowest level of measurement.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* True.
+* True.
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01061LoM
+extype: mchoice
+exsolution: 111111000
+exshuffle: TRUE

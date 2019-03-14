@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable called pain  where measurements look like scale 1-10?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01108LoM
+extype: mchoice
+exsolution: 01000
+exshuffle: TRUE

@@ -1,0 +1,39 @@
+Question
+========
+What is true of nominal level data?
+
+Answerlist
+----------
+* The appropriate descriptive statistics are frequency and percent.
+* These can be graphed using bar charts or pie charts.
+* The only meaningful measure of central tendency is the mode.
+* It is the highest level of measurement.
+* There is a specified order.
+* The appropriate descriptive statistics are mean and standard deviation.
+* Usually psychometric measurements.
+* Usually physical measurements.
+* Multiplication and division may be performed.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* False.
+* False.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01059LoM
+extype: mchoice
+exsolution: 111000000
+exshuffle: TRUE

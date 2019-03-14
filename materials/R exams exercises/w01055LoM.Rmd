@@ -1,0 +1,39 @@
+Question
+========
+What are characteristics of nominal level of measurement?
+
+Answerlist
+----------
+* It is the lowest level of measurement.
+* It divides observations into groups.
+* There is no inherent order.
+* This is a type of categorical variable.
+* Categories are mutually exclusive.
+* Can be known as qualitative data.
+* This level of measurement can be transformed to a lower level of measurement.
+* Ratios can be formed from numbers on this scale.
+* There is a known consistent distance between measurement points
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* True.
+* True.
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01055LoM
+extype: mchoice
+exsolution: 111111000
+exshuffle: TRUE

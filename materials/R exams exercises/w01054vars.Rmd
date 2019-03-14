@@ -1,0 +1,27 @@
+Question
+========
+In a study examining how quickly and accuratly nurses chart on an EMR page when different layouts are used, nurses are divided into three groups. One group charts on the regular EMR page. One group charts on modified layout #1. And one group charts on modified layout #2. After all nurses have completed their charting, the time to complete charting and the number of mistakes are measured. What type of variable is number of mistakes?
+
+Answerlist
+----------
+* independent variable
+* dependent variable
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w01054vars
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

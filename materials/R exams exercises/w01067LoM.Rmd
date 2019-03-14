@@ -1,0 +1,31 @@
+Question
+========
+What level of measurement is a variable where the distance between measurement units is known and consistent, but zero doesn't mean none?
+
+Answerlist
+----------
+* nominal
+* ordinal
+* interval
+* ratio  
+* not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* False.
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w01067LoM
+extype: mchoice
+exsolution: 00100
+exshuffle: TRUE
