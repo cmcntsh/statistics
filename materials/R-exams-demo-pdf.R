@@ -50,7 +50,19 @@ wk1LoM <- c('w01055LoM.Rmd', 'w01056LoM.Rmd', 'w01057LoM.Rmd', 'w01058LoM.Rmd', 
 
 myexam <- c(sample(wk1stats,2,replace=FALSE),sample(wk1R,3,replace=FALSE),sample(wk1vars,3,replace=FALSE),sample(wk1valid,3,replace=FALSE),sample(wk1LoM,9,replace=FALSE))
 
-exams2pdf(myexam, n = 3, name = c("pdf-exam", "pdf-solution"),
+exams2pdf(myexam, n = 3, name = c("Week 1 Quiz", "Week 1 Solutions"),
+          encoding = "UTF-8",
+          dir = "~/GitHub/statistics/quizzes",
+          edir = "R exams exercises",
+          template = c("R exams templates/exam.tex", "R exams templates/solution.tex"),
+          header = list(
+            Date = "2019-03-14",
+            ID = function(i) formatC(i, width = 5, flag = "0")
+          ))
+
+
+single <- c("w01035R.Rmd")
+exams2pdf(single, n=1,name = c("Week 1 Quiz", "Week 1 Solutions"),
           encoding = "UTF-8",
           dir = "~/GitHub/statistics/quizzes",
           edir = "R exams exercises",
