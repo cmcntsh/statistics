@@ -12,7 +12,7 @@ Answerlist
 * x&y (x AND y)
 * @ (at)
 * ^ (only if)
-* # (hash tag)
+* \# (hash tag)
 
 
 Solution

@@ -4,11 +4,11 @@ What symbol is used to make a comment in R?
 
 Answerlist
 ----------
-* #
+* \#
 * $
 * !
 * @
-* *
+* \*
 
 
 Solution
