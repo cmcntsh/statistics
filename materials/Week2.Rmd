@@ -77,7 +77,7 @@ countNom <- table(data$nominal)
 barplot(countNom)
 ```
 
-6) Run the following code block to create a bar chart for the variable ordinal. How many people are in each level of ordnial? (Type your answers below.)
+7) Run the following code block to create a bar chart for the variable ordinal. How many people are in each level of ordnial? (Type your answers below.)
 a) first - 
 b) second - 
 c) third - 
@@ -87,7 +87,7 @@ countOrd <- table(data$ordinal)
 barplot(countOrd)
 ```
 
-7) Run the following code block to create a box plot and histogram for the variable interval. Answer the following questions. Type your answers below. The first one is done for you.
+8) Run the following code block to create a box plot and histogram for the variable interval. Answer the following questions. Type your answers below. The first one is done for you.
 a) What is the minimum value? - 36.8
 b) What is the maximum value? - 
 c) What is the median? - 
@@ -101,7 +101,7 @@ text(y=fivenum(data$interval), labels =fivenum(data$interval), x=1.25)
 hist(data$interval)
 ```
 
-7) Run the following code block to create a box plot and histogram for the variable ratio. Answer the following questions. Type your answers below. The first one is done for you.
+9) Run the following code block to create a box plot and histogram for the variable ratio. Answer the following questions. Type your answers below. The first one is done for you.
 a) What is the minimum value? - 63
 b) What is the maximum value? - 
 c) What is the median? - 
@@ -115,13 +115,13 @@ text(y=fivenum(data$ratio), labels =fivenum(data$ratio), x=1.25)
 hist(data$ratio, xlim=c(60,85), breaks=seq(60,85,by=1))
 ```
 
-8) Run the following code block to create a scatter plot using interval and ratio variables.
+10) Run the following code block to create a scatter plot using interval and ratio variables.
 ```{r}
 plot(data$interval, data$ratio)
 
 ```
 
-9) Run the following block of code to create plots for all the variables using qplot(). Answer the following question. (Type your answer below.)
+11) Run the following block of code to create plots for all the variables using qplot(). Answer the following question. (Type your answer below.)
 a) Are there any advantages to using qplot? - 
 ```{r}
 qplot(data$nominal)
@@ -131,12 +131,12 @@ qplot(data$ratio)
 qplot(data$nominal,data$ratio)
 ```
 
-10) Explore your data frame data using the summarytools package. Run the following block of code to see an overview of each of the variables in your data frame.This is a quick and easy way to get an overview of the variables in your data set.
+12) Explore your data frame data using the summarytools package. Run the following block of code to see an overview of each of the variables in your data frame.This is a quick and easy way to get an overview of the variables in your data set.
 ```{r}
 view(dfSummary(data))
 ```
 
-11) Run the following code block to add labels to the variables in your data set and check out the labels now present using dfSummary().
+13) Run the following code block to add labels to the variables in your data set and check out the labels now present using dfSummary().
 ```{r}
 library(Hmisc)
 var.labels <- c(nominal="sex", ordinal="birth order",interval="temperature in Celsius", ratio="height in inches")
@@ -145,7 +145,7 @@ label(data) = as.list(var.labels[match(names(data),names(var.labels))])
 view(dfSummary(data))
 ```
 
-12) Run the following code block and answer the following questions. (Type your answers below.)
+14) Run the following code block and answer the following questions. (Type your answers below.)
 a) What are the levels of the variable data$nomnial? - 
 b) What is the logical result when you test to see if the data$nominal variable is male for the observations that are female? - 
 c) What is the logical result when you test to see if the data$nominal variable is male for the observations that are male? - 
@@ -158,7 +158,7 @@ temp <- as.numeric(data$nominal=="male")
 temp
 ```
 
-13) Attach the values in the temp variable to the data frame by running the following code block.
+15) Attach the values in the temp variable to the data frame by running the following code block.
 
 ```{r}
 data$gender_recode <- temp
@@ -168,7 +168,7 @@ class(data$gender_recode)
 
 ```
 
-14) Run the following code block to convert the new gender_recode variable to a factor. Examine the data frame using dfSummary() and answer the following question.
+16) Run the following code block to convert the new gender_recode variable to a factor. Examine the data frame using dfSummary() and answer the following question.
 a) What is the class of data$gender_recode? - 
 b) What are the levels of data$gender_recode? - 
 ```{r}
@@ -177,9 +177,32 @@ data$gender_recode <- factor(data$gender_recode)
 view(dfSummary(data))
 ```
 
-15) Change your working directory by using the menus in RStudio. RStudio - Session - Set Working Directory - Choose Directory... Navigate to the directoy where you want to save the assignments for this class. Save your data frame by running the following code block. After you run the code block, navigate to the folder and make sure the new file has been saved.
+17) Change your working directory by using the menus in RStudio. RStudio - Session - Set Working Directory - Choose Directory... Navigate to the directoy where you want to save the assignments for this class. Save your data frame by running the following code block. After you run the code block, navigate to the folder and make sure the new file has been saved.
 ```{r}
 write.csv(data, file = "Week2data.csv")
 ```
 
-16) Save this assignment as an Rmd file by using the RStudio menus. RStudio - File - Save As... Name the file Week2completedYourName. Turn in your Rmd file and your csv file you just saved.
+While you are working on your analysis, your coworker asks you for some help getting some descriptive statistics for a set of numbers and building a boxplot. The data are: [2,4,6,8,10]. Your co-worker read of a useful function for descriptive statistics, but wasn't sure how to get the package to run. The function is called stat.desc() and it's in the pastecs package. Run the following code block to help your coworker. Help your coworker answer the following questions.
+a) What is the mean? - 
+b) What is the median? - 
+c) What is the minimum? - 
+d) What is the maximum? - 
+e) What is the range? - 
+f) What is the first quartile? - 
+g) What is the third quartile? - 
+```{r}
+#install.packages("pastecs") # uncomment this line if you need to install package
+
+library(pastecs) # loads the package into memory
+
+temp1 <- c(2,4,6,8,10) # puts the numbers into a variable
+temp1 # shows the values in the variable
+
+stat.desc(temp1) # get descriptive statistics for the variable
+summary(temp1) # get summary statistics for the variable.
+
+boxplot(temp1) # creates a box plot for the variable
+```
+
+
+18) Save this assignment as an Rmd file by using the RStudio menus. RStudio - File - Save As... Name the file Week2completedYourName. Turn in your Rmd file and your csv file you just saved.
