@@ -174,12 +174,41 @@ xframe = as.data.frame(finalx)
 ```{r}
 # left skewed
 hist(rbeta(10000,5,2))
+#or
+x <- -rchisq(10000,6)
+hist(x, breaks=40)
+x <- x + abs(round(min(x),0))
+hist(x, breaks=40)
 
 # right skewed
 hist(rbeta(10000,2,5))
+#or
+x <- rchisq(10000,6)
+hist(x, breaks=40)
 
 # normal
 hist(rbeta(10000,5,5))
+
+# platykurtic
+hist(rt(10000,5), breaks=40)
+hist(rnorm(10000,mean=0,sd=5),breaks=40)
+hist(c(rnorm(10000,mean=50,sd=10),runif(10000,min=20,max=80)))
+
+```
+```{r}
+# platycurtic
+data=c(rnorm(10000,mean=100,sd=20),runif(10000,min=20,max=170))
+hist(data,breaks=30,prob=TRUE)
+curve(dnorm(x,mean=mean(data), sd=sd(data)),add=TRUE)
+```
+
+
+```{r}
+# leptokurtic
+data=c(rnorm(10000,mean=100,sd=20),rnorm(10000,mean=100,sd=5))
+hist(data,breaks=30,prob=TRUE)
+curve(dnorm(x,mean=mean(data), sd=sd(data)),add=TRUE)
+
 ```
 
 
