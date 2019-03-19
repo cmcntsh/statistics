@@ -1,0 +1,208 @@
+---
+title: "Week 3 R Assignment - Statistics Foundation Concepts"
+output:
+  word_document: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+Directions: Complete each step of the assignment below.
+
+Preparation: Run the following code block to install the R packages needed for this assignment and load them into memory. (This may take a few minutes if you haven't installed the packages before. If you get any errors or warnings, try running the block another time.)
+```{r}
+# List the packages needed
+packages <- c("summarytools","ggplot2","Hmisc","pastecs")
+
+# Check if each package is installed already. If not, install the package.
+for (i in packages){
+  if(! i %in% installed.packages()){
+    install.packages(i,dependencies = TRUE)
+  }
+  # Show each package that is checked.
+  print(i)
+  
+  # Load each package into memory so we can use it.
+  library(i,character.only=TRUE)
+}
+```
+
+
+1) Run the following code block below to open the Week1.csv file.
+```{r}
+data <- read.csv(file.choose())
+```
+
+2) Run the following code block and answer the following question. What are the names of the variables in the data set? (Type the names in the spaces below.)
+a)
+b)
+c)
+d)
+```{r}
+names(data)
+```
+
+3) Some csv data sets may have additional characters at the beginning of the csv file which can show up in the first variable name when the data set is imported into R. (This can happen sometimes when the data are exported from Excel into a csv file.) If the first variable name has strange characters at the beginning, run the code block below to rename the first variable.
+```{r}
+colnames(data)[1] <- "nominal"
+names(data)
+```
+
+4) Run the following code block and answer the following question. Type the variable name and the variable class for each of the variables in the data set. (The first one is done for you.)
+a) nominal - factor (levels: female, male)
+b) 
+c)
+d)
+```{r}
+class(data)
+class(data$nominal)
+levels(data$nominal)
+class(data$ordinal)
+levels(data$ordinal)
+class(data$interval)
+class(data$ratio)
+```
+
+5) The variable named ordinal is ordinal level of measurement. When R imports text columns it interprets the column as a factor, but it doesn't know the variable is supposed to be ordered. Run the following code block to make the variable ordinal and reorder the levels.
+```{r}
+data$ordinal <- factor(data$ordinal, ordered=TRUE, levels = c("first","second","third","fourth"))
+class(data$ordinal)
+levels(data$ordinal)
+```
+
+6) Run the following code block to create a bar chart for the variable nominal. How many people are in each level of nominal? (Type your answers below.)
+a) female - 
+b) male - 
+```{r}
+countNom <- table(data$nominal)
+barplot(countNom)
+```
+
+7) Run the following code block to create a bar chart for the variable ordinal. How many people are in each level of ordnial? (Type your answers below.)
+a) first - 
+b) second - 
+c) third - 
+d) fourth - 
+```{r}
+countOrd <- table(data$ordinal)
+barplot(countOrd)
+```
+
+8) Run the following code block to create a box plot and histogram for the variable interval. Answer the following questions. Type your answers below. The first one is done for you.
+a) What is the minimum value? - 36.8
+b) What is the maximum value? - 
+c) What is the median? - 
+d) What is the value of the first quartile? - 
+e) What is the value of the third quartile? - 
+f) Are there any outliers showing on either of the plots? If so, which one? - 
+```{r}
+boxplot(data$interval)
+text(y=fivenum(data$interval), labels =fivenum(data$interval), x=1.25)
+
+hist(data$interval)
+```
+
+9) Run the following code block to create a box plot and histogram for the variable ratio. Answer the following questions. Type your answers below. The first one is done for you.
+a) What is the minimum value? - 63
+b) What is the maximum value? - 
+c) What is the median? - 
+d) What is the value of the first quartile? - 
+e) What is the value of the third quartile? - 
+f) Are there any outliers showing on either of the plots? If so, which one? - 
+```{r}
+boxplot(data$ratio)
+text(y=fivenum(data$ratio), labels =fivenum(data$ratio), x=1.25)
+
+hist(data$ratio, xlim=c(60,85), breaks=seq(60,85,by=1))
+```
+
+10) Run the following code block to create a scatter plot using interval and ratio variables.
+```{r}
+plot(data$interval, data$ratio)
+
+```
+
+11) Run the following block of code to create plots for all the variables using qplot(). Answer the following question. (Type your answer below.)
+a) Are there any advantages to using qplot? - 
+```{r}
+qplot(data$nominal)
+qplot(data$ordinal)
+qplot(data$interval)
+qplot(data$ratio)
+qplot(data$nominal,data$ratio)
+```
+
+12) Explore your data frame data using the summarytools package. Run the following block of code to see an overview of each of the variables in your data frame.This is a quick and easy way to get an overview of the variables in your data set.
+```{r}
+view(dfSummary(data))
+```
+
+13) Run the following code block to add labels to the variables in your data set and check out the labels now present using dfSummary().
+```{r}
+library(Hmisc)
+var.labels <- c(nominal="sex", ordinal="birth order",interval="temperature in Celsius", ratio="height in inches")
+label(data) = as.list(var.labels[match(names(data),names(var.labels))])
+
+view(dfSummary(data))
+```
+
+14) Run the following code block and answer the following questions. (Type your answers below.)
+a) What are the levels of the variable data$nomnial? - 
+b) What is the logical result when you test to see if the data$nominal variable is male for the observations that are female? - 
+c) What is the logical result when you test to see if the data$nominal variable is male for the observations that are male? - 
+d) What is the result when you add the as.numeric() function to the test? - 
+```{r}
+data$nominal
+temp <- data$nominal=="male"
+temp
+temp <- as.numeric(data$nominal=="male")
+temp
+```
+
+15) Attach the values in the temp variable to the data frame by running the following code block.
+
+```{r}
+data$gender_recode <- temp
+
+class(data$gender_recode)
+
+
+```
+
+16) Run the following code block to convert the new gender_recode variable to a factor. Examine the data frame using dfSummary() and answer the following question.
+a) What is the class of data$gender_recode? - 
+b) What are the levels of data$gender_recode? - 
+```{r}
+data$gender_recode <- factor(data$gender_recode)
+
+view(dfSummary(data))
+```
+
+17) Change your working directory by using the menus in RStudio. RStudio - Session - Set Working Directory - Choose Directory... Navigate to the directoy where you want to save the assignments for this class. Save your data frame by running the following code block. After you run the code block, navigate to the folder and make sure the new file has been saved.
+```{r}
+write.csv(data, file = "Week2data.csv")
+```
+
+While you are working on your analysis, your coworker asks you for some help getting some descriptive statistics for a set of numbers and building a boxplot. The data are: [2,4,6,8,10]. Your co-worker read of a useful function for descriptive statistics, but wasn't sure how to get the package to run. The function is called stat.desc() and it's in the pastecs package. Run the following code block to help your coworker. Help your coworker answer the following questions.
+a) What is the mean? - 
+b) What is the median? - 
+c) What is the minimum? - 
+d) What is the maximum? - 
+e) What is the range? - 
+f) What is the first quartile? - 
+g) What is the third quartile? - 
+```{r}
+#install.packages("pastecs") # uncomment this line if you need to install package
+
+library(pastecs) # loads the package into memory
+
+temp1 <- c(2,4,6,8,10) # puts the numbers into a variable
+temp1 # shows the values in the variable
+
+stat.desc(temp1) # get descriptive statistics for the variable
+summary(temp1) # get summary statistics for the variable.
+
+boxplot(temp1) # creates a box plot for the variable
+```
+
+
+18) Save this assignment as an Rmd file by using the RStudio menus. RStudio - File - Save As... Name the file Week2completedYourName. Turn in your Rmd file and your csv file you just saved.
