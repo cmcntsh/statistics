@@ -1,0 +1,27 @@
+Question
+========
+A small standard deviation means the mean represents the data well.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02091spread
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

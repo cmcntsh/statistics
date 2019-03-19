@@ -1,0 +1,29 @@
+Question
+========
+Select the statement(s) which are true.
+
+Answerlist
+----------
+* Sample statistics are used to estimate population parameters.
+* Population parameters are used to estimate sample statistics.
+* Sample parameters are used to estimate population statistics.
+* Population statistics are used to estimate sample parameters.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02012popsamp
+extype: mchoice
+exsolution: 1000
+exshuffle: TRUE

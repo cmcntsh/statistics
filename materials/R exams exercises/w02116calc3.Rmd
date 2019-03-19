@@ -1,0 +1,29 @@
+Question
+========
+A data point has the value of 17 and the mean of the data set is 10. What is the deviation score?
+
+Answerlist
+----------
+* 7
+* -3
+* 3
+* -2.5
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02116calc3
+extype: mchoice
+exsolution: 1000
+exshuffle: TRUE

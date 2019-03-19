@@ -1,0 +1,35 @@
+Question
+========
+Given the following data set [1,2,3,4,5], what is the median?
+
+Answerlist
+----------
+* 5
+* 3.16
+* 10
+* 3
+* 7
+* 4
+* 8
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02112calc2
+extype: mchoice
+exsolution: 1000000
+exshuffle: TRUE

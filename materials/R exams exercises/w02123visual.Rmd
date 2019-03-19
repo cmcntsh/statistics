@@ -1,0 +1,27 @@
+Question
+========
+Sometimes the scale of a plot can make differences look larger or smaller than they really are.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02123visual
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

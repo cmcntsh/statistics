@@ -1,0 +1,27 @@
+Question
+========
+The mode is the value that appears most often in the data.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02052centtend
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

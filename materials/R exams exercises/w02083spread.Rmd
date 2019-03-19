@@ -1,0 +1,27 @@
+Question
+========
+The standard deviation is the square root of the variance.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02083spread
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

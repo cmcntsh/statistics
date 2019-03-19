@@ -1,0 +1,27 @@
+Question
+========
+Range is calculated by subtracting the smallest value in the data set from the largest value.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02070spread
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

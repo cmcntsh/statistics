@@ -1,0 +1,27 @@
+Question
+========
+The proportion of categorical variables is often represented using the letter p with the caret character (^) above it for the sample statistic.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02026popsamp
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

@@ -1,0 +1,27 @@
+Question
+========
+A data set can only have one mode.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02054centtend
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

@@ -1,0 +1,27 @@
+Question
+========
+The mode is always an actual value in the data set.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02057centtend
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

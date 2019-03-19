@@ -1,0 +1,27 @@
+Question
+========
+The standard deviation of quantitative variables is often represented with an s for the population parameter.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02030popsamp
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

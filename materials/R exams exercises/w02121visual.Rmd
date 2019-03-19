@@ -1,0 +1,29 @@
+Question
+========
+What type of plot is appropriate to show th relationship between two variables?
+
+Answerlist
+----------
+* bar chart
+* histogram
+* box plot
+* scatter plot
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* False.
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w02121visual
+extype: mchoice
+exsolution: 0001
+exshuffle: TRUE

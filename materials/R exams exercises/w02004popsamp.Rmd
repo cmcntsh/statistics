@@ -1,0 +1,27 @@
+Question
+========
+A characteristic of interest is called a parameter when it refers to the characteristic in an entire population.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02004popsamp
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

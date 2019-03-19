@@ -1,0 +1,27 @@
+Question
+========
+Population parameters are used to estimate sample statistics.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02009popsamp
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

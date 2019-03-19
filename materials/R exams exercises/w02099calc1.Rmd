@@ -1,0 +1,31 @@
+Question
+========
+Given the following data set [1,2,3,4,5], what is the variance?
+
+Answerlist
+----------
+* 3
+* 1.58
+* 2.5
+* 2
+* 4
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* False.
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02099calc1
+extype: mchoice
+exsolution: 00100
+exshuffle: TRUE

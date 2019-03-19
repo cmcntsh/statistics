@@ -1,0 +1,33 @@
+Question
+========
+What is a measure of central tendency?
+
+Answerlist
+----------
+* mean
+* median
+* mode
+* standard deviation
+* interquartile range
+* outliers
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02035centtend
+extype: mchoice
+exsolution: 111000
+exshuffle: TRUE

@@ -1,0 +1,27 @@
+Question
+========
+Normally distributed data are semetrical.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02041centtend
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

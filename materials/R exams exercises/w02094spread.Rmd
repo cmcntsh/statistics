@@ -1,0 +1,27 @@
+Question
+========
+A deviation score is how much any data point differs from the mean.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02094spread
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

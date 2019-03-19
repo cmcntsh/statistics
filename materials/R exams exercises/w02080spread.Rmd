@@ -1,0 +1,27 @@
+Question
+========
+Variance is in squared units.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02080spread
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

@@ -1,0 +1,27 @@
+Question
+========
+Variance is the sum of all deviation scores squared divided by the total number of scores.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02096spread
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

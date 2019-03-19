@@ -1,0 +1,27 @@
+Question
+========
+If sampling is truly random, the sample statistic will always match the population parameter.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02013popsamp
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

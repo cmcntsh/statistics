@@ -1,0 +1,27 @@
+Question
+========
+The meadian is strongly affected by outliers.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02050centtend
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

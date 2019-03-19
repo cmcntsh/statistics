@@ -1,0 +1,31 @@
+Question
+========
+[img:"hist_norm.jpeg"] Select the statements that are true.
+
+Answerlist
+----------
+* The data are normally distributed.
+* The data are left skewed.
+* The data are right skewed.
+* The data are platykurtic.
+* The data are leptokurtic.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02129histimg
+extype: mchoice
+exsolution: 10000
+exshuffle: TRUE

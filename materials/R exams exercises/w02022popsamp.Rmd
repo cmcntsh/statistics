@@ -1,0 +1,27 @@
+Question
+========
+The mean of quantitative variables is often represented with x with a bar over it for the sample statistic.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02022popsamp
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

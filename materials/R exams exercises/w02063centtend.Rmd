@@ -1,0 +1,27 @@
+Question
+========
+Data are skewed when there are extreme values on one side of the distribution.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02063centtend
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

@@ -1,0 +1,29 @@
+Question
+========
+What type of plot is appropriate for interval level data?
+
+Answerlist
+----------
+* bar chart
+* histogram
+* box plot
+* scatter plot
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02119visual
+extype: mchoice
+exsolution: 0110
+exshuffle: TRUE

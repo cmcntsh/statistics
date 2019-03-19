@@ -1,0 +1,27 @@
+Question
+========
+The proportion of categorical variables is often represented using the letter p for the population parameter.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02025popsamp
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

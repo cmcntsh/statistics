@@ -1,0 +1,27 @@
+Question
+========
+What is the statistical meaning of population?
+
+Answerlist
+----------
+* All of the members of a group you're interested in.
+* It's always all of the people in an entire country.
+* There's no such concept in statistics.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02001popsamp
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

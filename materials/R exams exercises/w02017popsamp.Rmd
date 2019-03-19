@@ -1,0 +1,27 @@
+Question
+========
+Population parameters are usually represented using Roman letters (normal ABCs).
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02017popsamp
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

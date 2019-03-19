@@ -1,0 +1,31 @@
+Question
+========
+What is another name for the mean?
+
+Answerlist
+----------
+* average
+* median
+* mode
+* standard deviation
+* abuse
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02036centtend
+extype: mchoice
+exsolution: 10000
+exshuffle: TRUE

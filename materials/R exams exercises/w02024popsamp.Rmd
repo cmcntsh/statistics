@@ -1,0 +1,27 @@
+Question
+========
+The standard deviation of quantitative variables is often represented with an s for the sample statistic.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02024popsamp
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE
