@@ -1,0 +1,27 @@
+Question
+========
+The mean is affected by outliers.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02048centtend
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

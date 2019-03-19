@@ -1,0 +1,27 @@
+Question
+========
+When the mean and the median are equal, the data are always normally distributed.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02061centtend
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

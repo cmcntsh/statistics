@@ -1,0 +1,27 @@
+Question
+========
+If data are normally distributed, the mean, the median, and the mode will be equal.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02045centtend
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

@@ -1,0 +1,37 @@
+Question
+========
+Select the statement(s) which are true.
+
+Answerlist
+----------
+* Sample statistics are usually represented using Roman letters (normal ABCs).
+* Population parameters are usually represented using Greek letters.
+* Sample statistics are usually represented using Greek letters.
+* Population parameters are usually represented using Roman letters (normal ABCs).
+* Sample parameters are usually represented with Roman letters (normal ABCs).
+* Population statistics are usually represented with Greek letters.
+* Sample parameters are usually represented with Greek letters.
+* Population statistics are usually represented with Roman letters (normal ABCs).
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* False.
+* False.
+* False.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02018popsamp
+extype: mchoice
+exsolution: 11000000
+exshuffle: TRUE

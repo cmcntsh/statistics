@@ -1,0 +1,27 @@
+Question
+========
+Range is a measure of central tendency.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02072spread
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

@@ -1,0 +1,29 @@
+Question
+========
+What type of plot is appropriate for nominal level data?
+
+Answerlist
+----------
+* bar chart
+* histogram
+* box plot
+* scatter plot
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02117visual
+extype: mchoice
+exsolution: 1000
+exshuffle: TRUE

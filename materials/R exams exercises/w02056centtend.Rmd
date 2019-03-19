@@ -1,0 +1,27 @@
+Question
+========
+Sometimes the values for the mean or the median don't actually occur in the data set.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02056centtend
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

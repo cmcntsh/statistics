@@ -1,0 +1,27 @@
+Question
+========
+The proportion of categorical variables is often represented using the letter p for the sample statistic.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02031popsamp
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

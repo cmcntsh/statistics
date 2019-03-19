@@ -1,0 +1,27 @@
+Question
+========
+When the mean increases in a data set, all values in the data set increase by the same amount.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02069centtend
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

@@ -1,0 +1,27 @@
+Question
+========
+The mean is a good measure of central tendency when the data are normally distributed.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02037centtend
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

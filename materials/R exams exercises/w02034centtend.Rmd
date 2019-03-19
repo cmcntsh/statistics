@@ -1,0 +1,27 @@
+Question
+========
+A measure of central tendency does not give you any information about the group.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02034centtend
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

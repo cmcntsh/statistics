@@ -1,0 +1,33 @@
+Question
+========
+[img:"box_plat.jpeg"] Select the statements that are true.
+
+Answerlist
+----------
+* There are no outliers.
+* There are outliers with large values.
+* There are outliers with small values.
+* The data are symetrically distributed.
+* The data are left skewed.
+* The data are right skewed.
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02137boximg
+extype: mchoice
+exsolution: 100100
+exshuffle: TRUE

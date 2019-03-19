@@ -1,0 +1,27 @@
+Question
+========
+Variation is not important in statistics.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02093spread
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

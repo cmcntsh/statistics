@@ -1,0 +1,27 @@
+Question
+========
+Variance is a measure of how spread out the entire data set is.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02078spread
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

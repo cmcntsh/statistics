@@ -1,0 +1,27 @@
+Question
+========
+A deviation score is calculated by subtracting the mean from the individual score.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02095spread
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

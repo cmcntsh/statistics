@@ -1,0 +1,31 @@
+Question
+========
+Given the following data set [1,2,3,4,5], what is the standard deviation?
+
+Answerlist
+----------
+* 3
+* 1.58
+* 2.5
+* 2
+* 4
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02098calc1
+extype: mchoice
+exsolution: 01000
+exshuffle: TRUE

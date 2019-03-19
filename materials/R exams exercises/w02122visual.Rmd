@@ -1,0 +1,29 @@
+Question
+========
+What types of information can be shown on a bar chart?
+
+Answerlist
+----------
+* frequencies
+* percents
+* means
+* standard deviations
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02122visual
+extype: mchoice
+exsolution: 1100
+exshuffle: TRUE

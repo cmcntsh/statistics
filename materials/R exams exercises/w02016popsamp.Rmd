@@ -1,0 +1,27 @@
+Question
+========
+Sample statistics are usually represented using Greek letters.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02016popsamp
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

@@ -1,0 +1,27 @@
+Question
+========
+A sample is all the members of a group you're interested in.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02003popsamp
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

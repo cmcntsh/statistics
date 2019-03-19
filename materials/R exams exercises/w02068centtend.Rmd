@@ -1,0 +1,27 @@
+Question
+========
+When the mean is smaller than the median, there are unusually large values in the data set.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02068centtend
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE

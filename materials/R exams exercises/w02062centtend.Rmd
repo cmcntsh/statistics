@@ -1,0 +1,27 @@
+Question
+========
+When the mean and the median are equal, the data are symetrically distributed.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* True.
+* False.
+* False.
+
+
+Meta-information
+================
+exname: w02062centtend
+extype: mchoice
+exsolution: 100
+exshuffle: TRUE

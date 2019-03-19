@@ -1,0 +1,31 @@
+Question
+========
+Given the following data set [1,2,3,4,5], what is the range?
+
+Answerlist
+----------
+* 3
+* 1.58
+* 2.5
+* 2
+* 4
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* False.
+* False.
+* False.
+* True.
+
+
+Meta-information
+================
+exname: w02103calc1
+extype: mchoice
+exsolution: 00001
+exshuffle: TRUE

@@ -1,0 +1,27 @@
+Question
+========
+The mean of quantitative variables is often represented with a Greek mu (µ) for the sample statistic.
+
+Answerlist
+----------
+* TRUE
+* FALSE
+* Not enough information
+
+
+Solution
+========
+
+Answerlist
+----------
+* False.
+* True.
+* False.
+
+
+Meta-information
+================
+exname: w02027popsamp
+extype: mchoice
+exsolution: 010
+exshuffle: TRUE
