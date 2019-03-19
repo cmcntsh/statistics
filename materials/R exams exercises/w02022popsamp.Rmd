@@ -1,6 +1,6 @@
 Question
 ========
-The mean of quantitative variables is often represented with x with a bar over it ( x̅ ) for the sample statistic.
+The mean of quantitative variables is often represented with x with a bar over it for the sample statistic.
 
 Answerlist
 ----------
