@@ -1,6 +1,22 @@
+```{r data generation, echo = FALSE, results = "hide"}
+## DATA GENERATION
+#x=rnorm(1000,mean=100,sd=10) # normal
+x=c(rchisq(1000,6)) # right skew
+#x=c(-rchisq(1000,6)+25) # left skew
+#x=c(rnorm(1000,mean=100,sd=5),rnorm(500,mean=100,sd=3),rnorm(500,mean=100, sd=1)) # leptokurtic
+#x=c(rnorm(1000,mean=100,sd=10),runif(500,min=60,max=140),runif(500,min=70, max=130)) #platykurtic
+```
+
+
 Question
 ========
-[img:"box_Rskew.jpeg"] Select the statements that are true.
+```{r boxplot, echo = FALSE, results = "hide", fig.height = 10, fig.width = 10, fig.path = "", fig.cap = ""}
+
+#hist(x,breaks=30)
+boxplot(x)
+```
+
+Based on the plot, select the statements that are true.
 
 Answerlist
 ----------
