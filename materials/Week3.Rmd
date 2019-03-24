@@ -1,5 +1,5 @@
 ---
-title: "Week 3 R Assignment - Statistics Foundation Concepts"
+title: "Week 3 R Assignment - Transforming and recoding data"
 output:
   word_document: default
   pdf_document: default
@@ -11,7 +11,7 @@ Directions: Complete each step of the assignment below.
 Preparation: Run the following code block to install the R packages needed for this assignment and load them into memory. (This may take a few minutes if you haven't installed the packages before. If you get any errors or warnings, try running the block another time.)
 ```{r}
 # List the packages needed
-packages <- c("summarytools","ggplot2","Hmisc","pastecs")
+packages <- c("summarytools","ggplot2","Hmisc","pastecs","car")
 
 # Check if each package is installed already. If not, install the package.
 for (i in packages){
@@ -32,117 +32,116 @@ for (i in packages){
 data <- read.csv(file.choose())
 ```
 
-2) Run the following code block and answer the following question. What are the names of the variables in the data set? (Type the names in the spaces below.)
-a)
-b)
-c)
-d)
-```{r}
-names(data)
-```
-
-3) Some csv data sets may have additional characters at the beginning of the csv file which can show up in the first variable name when the data set is imported into R. (This can happen sometimes when the data are exported from Excel into a csv file.) If the first variable name has strange characters at the beginning, run the code block below to rename the first variable.
+2) Some csv data sets may have additional characters at the beginning of the csv file which can show up in the first variable name when the data set is imported into R. (This can happen sometimes when the data are exported from Excel into a csv file.) If the first variable name has strange characters at the beginning, run the code block below to rename the first variable.
 ```{r}
 colnames(data)[1] <- "nominal"
 names(data)
 ```
 
-4) Run the following code block and answer the following question. Type the variable name and the variable class for each of the variables in the data set. (The first one is done for you.)
-a) nominal - factor (levels: female, male)
-b) 
-c)
-d)
+3) Probably one of themost important transformations you should know how to perform is transforming values in a variable to z-scores. I never transform variables in place. I always transform variables into a new variable. That way if you make a mistake you can delete the new variable and try again. If you recode your variable in place and make a mistake, you will lose your original data and need to reload your dataset. Run the following code block and answer the following questions. 
+a) What is the formula to calculate a z-score?
+b) What is the mean of the new z-score variable?
+c) What is the standard deviation of the new z-score variable?
+d) What does it mean if a z-score is postive? (What does it tell you about the original raw score?)
+e) What does it mean if a z-score is negative? (What does it tell you about the original raw score?)
 ```{r}
-class(data)
-class(data$nominal)
-levels(data$nominal)
-class(data$ordinal)
-levels(data$ordinal)
-class(data$interval)
-class(data$ratio)
-```
-
-5) The variable named ordinal is ordinal level of measurement. When R imports text columns it interprets the column as a factor, but it doesn't know the variable is supposed to be ordered. Run the following code block to make the variable ordinal and reorder the levels.
-```{r}
-data$ordinal <- factor(data$ordinal, ordered=TRUE, levels = c("first","second","third","fourth"))
-class(data$ordinal)
-levels(data$ordinal)
-```
-
-6) Run the following code block to create a bar chart for the variable nominal. How many people are in each level of nominal? (Type your answers below.)
-a) female - 
-b) male - 
-```{r}
-countNom <- table(data$nominal)
-barplot(countNom)
-```
-
-7) Run the following code block to create a bar chart for the variable ordinal. How many people are in each level of ordnial? (Type your answers below.)
-a) first - 
-b) second - 
-c) third - 
-d) fourth - 
-```{r}
-countOrd <- table(data$ordinal)
-barplot(countOrd)
-```
-
-8) Run the following code block to create a box plot and histogram for the variable interval. Answer the following questions. Type your answers below. The first one is done for you.
-a) What is the minimum value? - 36.8
-b) What is the maximum value? - 
-c) What is the median? - 
-d) What is the value of the first quartile? - 
-e) What is the value of the third quartile? - 
-f) Are there any outliers showing on either of the plots? If so, which one? - 
-```{r}
-boxplot(data$interval)
-text(y=fivenum(data$interval), labels =fivenum(data$interval), x=1.25)
-
-hist(data$interval)
-```
-
-9) Run the following code block to create a box plot and histogram for the variable ratio. Answer the following questions. Type your answers below. The first one is done for you.
-a) What is the minimum value? - 63
-b) What is the maximum value? - 
-c) What is the median? - 
-d) What is the value of the first quartile? - 
-e) What is the value of the third quartile? - 
-f) Are there any outliers showing on either of the plots? If so, which one? - 
-```{r}
-boxplot(data$ratio)
-text(y=fivenum(data$ratio), labels =fivenum(data$ratio), x=1.25)
-
-hist(data$ratio, xlim=c(60,85), breaks=seq(60,85,by=1))
-```
-
-10) Run the following code block to create a scatter plot using interval and ratio variables.
-```{r}
-plot(data$interval, data$ratio)
+# transform the variable interval to z-scores
+data$interval_zscore <- (data$interval - mean(data$interval))/sd(data$interval)
+round(mean(data$interval_zscore),2)
+sd(data$interval_zscore)
 
 ```
 
-11) Run the following block of code to create plots for all the variables using qplot(). Answer the following question. (Type your answer below.)
-a) Are there any advantages to using qplot? - 
+4) There is a function in R to calcuate a z-score. Run the following code to calculate the z-scores for interval in another new variable. Compare the values of the two variables.
+a) What do you noice about the two scores?
 ```{r}
-qplot(data$nominal)
-qplot(data$ordinal)
-qplot(data$interval)
-qplot(data$ratio)
-qplot(data$nominal,data$ratio)
+data$interval_zscore2 <- scale(data$interval)
 ```
 
-12) Explore your data frame data using the summarytools package. Run the following block of code to see an overview of each of the variables in your data frame.This is a quick and easy way to get an overview of the variables in your data set.
+5) Insert code into the code block below to transform the variable ratio into z-scores.
 ```{r}
-view(dfSummary(data))
+# transform the variable ratio to z-scores
+
 ```
 
-13) Run the following code block to add labels to the variables in your data set and check out the labels now present using dfSummary().
+6) Create a scatterplot for the variables interval and ratio. Create another scatterplot for the z-scores of each of those variables. Answer the question below.
+a) What do you notice about the scatterplots? 
 ```{r}
-library(Hmisc)
-var.labels <- c(nominal="sex", ordinal="birth order",interval="temperature in Celsius", ratio="height in inches")
-label(data) = as.list(var.labels[match(names(data),names(var.labels))])
+# create scatterplots
 
-view(dfSummary(data))
+```
+
+7) We won't discuss more about data transformations now, but you should understand that just like you can enter a formula to create a z-score for all the values in a variable, you can use other formulas. To practice, calculate the square root for each value in the ratio variable and save the results in a new variabl called ratio_sqrt. Some other common transformations you may see used are log or inverse transformations and there are still others.
+ 
+```{r}
+# create a new variable ratio_sqrt
+
+```
+
+8) Another common procedure you may need to know when working with study data is reverse scoring questions on a questionnaire. One way to do this is to specify each value in a variable and identify the new value desired in the new variable.
+```{r}
+data$ordinal_recode1[data$ordinal=="first"] <- 4
+data$ordinal_recode1[data$ordinal=="second"] <- 3
+data$ordinal_recode1[data$ordinal=="third"] <- 2
+data$ordinal_recode1[data$ordinal=="fourth"] <- 1
+data$ordinal_recode1[is.na(data$ordinal)] <- NA
+str(data$ordinal_recode1)
+
+# don't forget to make sure the new variable is ordinal like the original
+data$ordinal_recode1 <- factor(data$ordinal_recode1,levels=c("1","2","3","4"),ordered=TRUE)
+str(data$ordinal_recode1)
+
+```
+
+9) Another way you can do the same thing is using the recode() function in the car package. (Companion to Applied Regression)
+```{r}
+library(car)
+data$ordinal_recode2 <- recode(data$ordinal,"'fourth'=1;'third'=2;'second'=3;'first'=4;NA=NA")
+str(data$ordinal_recode2)
+
+# Don't forget to make sure the levels are in the correct order for ordinal variables
+data$ordinal_recode2 <- factor(data$ordinal_recode2,levels=c("1","2","3","4"),ordered=TRUE)
+str(data$ordinal_recode2)
+```
+
+10) Run the code block below to calculate the 30th, 60th, and 90th percentile for the ratio variable.
+a) 30th - 
+b) 60th - 
+c) 90th - 
+d) What does the percentile mean?
+```{r}
+# calculate the 30th, 60th, and 90th percentile for the ratio variable
+print("percentiles using actual data")
+quantile(data$ratio,c(.30,.60,.90))
+
+# qnorm will give you the corresponding z-scores for a given percent rank
+print("z scores")
+qnorm(c(.30,.60,.90))
+
+# sometimes you don't have the actual data, but you can calculate percentiles using the normal distribution for a given mean and sd
+# qnorm will calculate a percentile for a percentile rank if supplied with a mean and sd
+print("percentiles using normal distribution given mean and sd")
+qnorm(c(.30,.60,.90),mean(data$ratio),sd(data$ratio))
+
+```
+
+11) Calculate the percentile rank for each score in the ratio variable using the z-score.
+a) What is the percentile rank for the lowest score?
+b) What is the percentile rank forthe highest score?
+c) What does the percentile rank mean?
+```{r}
+data$ratio_rank <- rank(data$ratio)
+data$ratio_ptilerank <- round(pnorm(data$ratio_zscore)*100,2)
+```
+
+12) 
+```{r}
+error <- qt(.975,df=length(data$ratio))*sd(data$ratio)/sqrt(length(data$ratio))
+mean(data$ratio)+error
+mean(data$ratio)-error
+mean(data$ratio)
+
+t.test(data$ratio)
 ```
 
 14) Run the following code block and answer the following questions. (Type your answers below.)
