@@ -1,0 +1,65 @@
+```{r data generation, echo = FALSE, results = "hide"}
+## DATA GENERATION
+total <- sample(4:9, 1)
+red <- sample(1:total, 1)
+blue <- total-red
+replace <- TRUE
+library(MASS)
+fractions(red/total)
+fractions(blue/total)
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+questions[1] <- paste(fractions(red/total))
+  solutions[1] <- red/total==red/total
+  explanations[1] <- paste0("The total number of red balls is ", red,". ", "The total number of balls is ", total,".")
+
+questions[2] <- paste(fractions(blue/total))
+solutions[2] <- red/total==blue/total
+explanations[2] <- paste0("The total number of red balls is ", red,". ", "The total number of balls is ", total,".")
+
+questions[3] <- paste(fractions(total/red))
+solutions[3] <- red/total==total/red
+explanations[3] <- paste0("The total number of red balls is ", red,". ", "The total number of balls is ", total,".")
+
+questions[4] <- paste(fractions(total/blue))
+solutions[4] <- red/total==total/blue
+explanations[4] <- paste0("The total number of red balls is ", red,". ", "The total number of balls is ", total,".")
+    
+questions[5] <- paste(fractions((red/total)*(blue/total)))
+solutions[5] <- (red/total)*(blue/total)==red/total
+explanations[5] <- paste0("The total number of red balls is ", red,". ", "The total number of balls is ", total,".")
+
+## permute order of solutions/questions
+o <- sample(1:5)
+questions <- questions[o]
+solutions <- solutions[o]
+explanations <- explanations[o]
+
+```
+
+Question
+========
+A bag has `r red` red balls and `r blue` blue balls. If you draw one ball out of the bag, what is the probability of getting a red ball?
+
+Which of the following options are correct?
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(questions, markup = "markdown")
+```
+
+Solution
+========
+
+```{r solutionlist, echo = FALSE, results = "asis"}
+answerlist(ifelse(solutions, "True", "False"), explanations, markup = "markdown")
+```
+
+Meta-information
+================
+extype: mchoice
+exsolution: `r mchoice2string(solutions)`
+exname: Probability1
