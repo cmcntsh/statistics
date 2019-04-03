@@ -1,7 +1,8 @@
 ```{r data generation, echo = FALSE, results = "hide"}
 ## DATA GENERATION
-total <- sample(4:15, 1)
-color <- sample(c("red","blue"),1)
+total1 <- sample(4:15, 1)
+color1 <- sample(c("red","blue"),1)
+color2 <- sample(c("red","blue"),1)
 red <- sample(2:(total-2), 1)
 blue <- total-red
 if (red==blue){
@@ -9,11 +10,21 @@ if (red==blue){
   blue <- blue-1
 }
 replace <- TRUE
-compound <- FALSE
-if (color=="red"){
-  result = red
+compound <- TRUE
+if (color1=="red"){
+  result1 = red
 } else {
-  result = blue
+  result1 = blue
+}
+if (color2=="red"){
+  result2 = red
+} else {
+  result2 = blue
+}
+if (replace==FALSE){
+  total2 <- total1-1
+} else {
+  total2 <- total1
 }
 
 # fractions function allows you to display fractions
@@ -28,9 +39,9 @@ fractions(blue/total)
 # P(X and Y) = P(X)*P(Y|X) OR P(Y)*P(X|Y)
 
 ## QUESTION/ANSWER GENERATION
-questions <- character(7)
-solutions <- logical(7)
-explanations <- character(7)
+questions <- character(9)
+solutions <- logical(9)
+explanations <- character(9)
 
 questions[1] <- paste(fractions(red/total))
   solutions[1] <- red/total==result/total
@@ -78,7 +89,7 @@ explanations <- explanations[o]
 
 Question
 ========
-A bag has `r red` red balls and `r blue` blue balls. If you draw one ball out of the bag, what is the probability of getting a `r color` ball? Select the statements that are true.
+A bag has `r red` red balls and `r blue` blue balls. If you draw one ball out of the bag, place it back in the bag, and draw another ball what is the probability of getting a `r color1` ball and then a `r color2` ball? Select the statements that are true.
 
 
 ```{r questionlist, echo = FALSE, results = "asis"}
