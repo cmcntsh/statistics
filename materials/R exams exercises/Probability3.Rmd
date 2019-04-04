@@ -14,7 +14,7 @@ if (red1==blue1){
 color1 <- sample(c("red","blue"),1)
 color2 <- sample(c("red","blue"),1)
 # define the type of problem
-replace <- TRUE
+replace <- FALSE
 compound <- TRUE
 if (color1=="red"){
   result1 = red1
@@ -25,23 +25,24 @@ if (color1=="red"){
   red2 <- red1
   blue2 <- blue1
 }
-if (color2=="red"){
-  result2 = red2
-} else {
-  result2 = blue2
-}
 if (replace==FALSE){
   total2 <- total1-1
   if (color1=="red"){
-  red2 <- red1-1
+  red2 <- (red1-1)
   blue2 <- blue1
 } else {
   red2 <- red1
-  blue2 <- blue1-1
+  blue2 <- (blue1-1)
 }
 
 } else {
   total2 <- total1
+}
+
+if (color2=="red"){
+  result2 = red2
+} else {
+  result2 = blue2
 }
 
 # fractions function allows you to display fractions
@@ -117,7 +118,7 @@ explanations <- explanations[o]
 
 Question
 ========
-A bag has `r red1` red balls and `r blue1` blue balls. If you draw one ball out of the bag, place it back in the bag, and draw another ball what is the probability of getting a `r color1` ball and then a `r color2` ball? Select the statements that are true.
+A bag has `r red1` red balls and `r blue1` blue balls. If you draw one ball out of the bag and then draw another ball without replacing the first, what is the probability of getting a `r color1` ball and then a `r color2` ball? Select the statements that are true.
 
 
 ```{r questionlist, echo = FALSE, results = "asis"}
