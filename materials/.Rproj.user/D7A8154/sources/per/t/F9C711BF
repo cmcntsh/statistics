@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1569434195257.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "774960397",
+    "id" : "F9C711BF",
+    "lastKnownWriteTime" : 1569437210,
+    "last_content_update" : 1569437210907,
+    "path" : "~/GitHub/statistics/materials/Week2.Rmd",
+    "project_path" : "Week2.Rmd",
+    "properties" : {
+        "cursorPosition" : "42,13",
+        "scrollLine" : "24"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
