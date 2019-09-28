@@ -27,7 +27,7 @@ for (i in packages){
 ```
 
 
-1) Data files can be opened using the menus in RStudio or by executing code. Open your data file by using the menu or executing the code block below. Run the following code block below to open the Week1.csv file.
+1) Data files can be opened using the menus in RStudio or by executing code. Open your data file by using the menu or executing the code block below to open the Week1.csv file.
 ```{r}
 library(readr)
 dataset <- read_csv(file.choose())
