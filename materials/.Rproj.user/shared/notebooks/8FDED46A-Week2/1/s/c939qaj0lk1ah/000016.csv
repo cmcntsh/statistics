@@ -1,0 +1,6 @@
+"0","# https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html"
+"0","view(dfSummary(dataset, plain.ascii = FALSE, style = ""grid"", "
+"0","          graph.magnif = 0.75, valid.col = FALSE, tmp.img.dir = ""/tmp""))"
+"2","temporary images written to 'C:\tmp'
+"
+"2","NAs introduced by coercion"

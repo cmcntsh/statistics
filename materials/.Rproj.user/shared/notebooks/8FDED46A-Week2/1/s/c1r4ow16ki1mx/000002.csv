@@ -1,5 +1,5 @@
 "0","library(readr)"
-"0","dataset <- read_csv(file.choose())"
+"0","dataset <- readr::read_csv(file.choose())"
 "2","Parsed with column specification:
 cols(
   nominal = [31mcol_character()[39m,
