@@ -6,12 +6,29 @@ output:
   html_document:
     df_print: paged
 ---
+Introduction: Data needs to be examined and any problems fixed before analysis can be done.In statistics, we focus on four areas.
+
+1. Data accuracy
+    + make sure data types are correct
+    + reverse code items
+    + score instruments
+    + check for typos
+    + check for nonsensical data
+    + check categories make sense
+    + correct problems if possible or delete
+    + keep track of what you do so you can be transparent
+2. Missing data
+3. outliers
+4. Statistical assumptions
+
+This assignment shows some steps to take to assess data accuracy and missing data.
+
 Directions: Complete each step of the assignment below.
 
 Preparation: Run the following code block to install the R packages needed for this assignment and load them into memory. (This may take a few minutes if you haven't installed the packages before. If you get any errors or warnings, try running the block another time.)
 ```{r}
 # List the packages needed
-packages <- c("tidyverse","summarytools","Hmisc")
+packages <- c("tidyverse","summarytools")
 
 # Check if each package is installed already. If not, install the package.
 for (i in packages){
@@ -27,21 +44,227 @@ for (i in packages){
 ```
 
 
-1) Data files can be opened using the menus in RStudio or by executing code. Open your data file by using the menu or executing the code block below. Run the following code block below to open the Week1.csv file.
+1) Data files can be opened using the menus in RStudio or by executing code. Open your data file by using the menu or executing the code block below to open the Week1.csv file. If you use the menus, make sure to select From Text (readr)... (The code below was generated using the menu.) We will use Tidyverse packages as much as possible in this class. The readr package is a Tidyverse package.
 ```{r}
 library(readr)
-dataset <- read_csv(file.choose())
+dataset <- readr::read_csv(file.choose())
 View(dataset)
 ```
 
-2) Run the following code block and answer the following question. What are the names of the variables in the data set? (Type the names in the spaces below.)
+2) A great place to start is just taking a look at the data. The three commands in the code block below all let you to take a look at what's in the data set. Uncomment one of the lines and run the code block to see what it does. Replace the comment and try one of the other commands. After you've tried all three type the name and data type for each variable in the spaces below.
 a)
 b)
 c)
 d)
 ```{r}
-names(dataset)
+#View(dataset)
+#glimpse(dataset)
+#str(dataset)
 ```
+3) The glimpse() and str() functions give you abbreviations for the data types. Run the code block below to see the data type for the data set and each column.R tries to guess the data type when you import data. It did a good job of identifying 
+```{r}
+class(dataset)
+class(dataset$nominal)
+class(dataset$ordinal)
+class(dataset$interval)
+class(dataset$ratio)
+```
+
+
+```{r}
+spssSkewKurtosis=function(x) {
+  w=length(x)
+  m1=mean(x)
+  m2=sum((x-m1)^2)
+  m3=sum((x-m1)^3)
+  m4=sum((x-m1)^4)
+  s1=sd(x)
+  skew=w*m3/(w-1)/(w-2)/s1^3
+  sdskew=sqrt( 6*w*(w-1) / ((w-2)*(w+1)*(w+3)) )
+  kurtosis=(w*(w+1)*m4 - 3*m2^2*(w-1)) / ((w-1)*(w-2)*(w-3)*s1^4)
+  sdkurtosis=sqrt( 4*(w^2-1) * sdskew^2 / ((w-3)*(w+5)) )
+  mat=matrix(c(skew,kurtosis, sdskew,sdkurtosis), 2,
+        dimnames=list(c("skew","kurtosis"), c("estimate","se")))
+  return(mat)
+}
+
+spssSkewKurtosis(dataset$interval)
+spssSkewKurtosis(dataset$interval)[1,1]
+
+# http://www.stat.cmu.edu/~hseltman/files/spssSkewKurtosis.R
+skewFunct=function(x, na.rm=FALSE){
+  w = ifelse(na.rm==TRUE,length(x)-sum(is.na(x),na.rm=TRUE),length(x))
+  m1=mean(x,na.rm=na.rm)
+  m2=sum((x-m1)^2,na.rm=na.rm)
+  m3=sum((x-m1)^3,na.rm=na.rm)
+  m4=sum((x-m1)^4,na.rm=na.rm)
+  s1=sd(x,na.rm=na.rm)
+  skew=w*m3/(w-1)/(w-2)/s1^3
+  return(skew)
+}
+kurtosisFunct=function(x, na.rm=FALSE){
+  w = ifelse(na.rm==TRUE,length(x)-sum(is.na(x),na.rm=TRUE),length(x))
+  m1=mean(x)
+  m2=sum((x-m1)^2)
+  m3=sum((x-m1)^3)
+  m4=sum((x-m1)^4)
+  s1=sd(x)
+  kurtosis=(w*(w+1)*m4 - 3*m2^2*(w-1)) / ((w-1)*(w-2)*(w-3)*s1^4)
+  return(kurtosis)
+}
+SEskewFunct=function(x, na.rm=FALSE){
+  w = ifelse(na.rm==TRUE,length(x)-sum(is.na(x),na.rm=TRUE),length(x))
+  m1=mean(x)
+  m2=sum((x-m1)^2)
+  m3=sum((x-m1)^3)
+  m4=sum((x-m1)^4)
+  s1=sd(x)
+  sdskew=sqrt( 6*w*(w-1) / ((w-2)*(w+1)*(w+3)) )                          
+  return(sdskew)
+}
+SEkurtosisFunct=function(x, na.rm=FALSE){
+  w = ifelse(na.rm==TRUE,length(x)-sum(is.na(x),na.rm=TRUE),length(x))
+  m1=mean(x)
+  m2=sum((x-m1)^2)
+  m3=sum((x-m1)^3)
+  m4=sum((x-m1)^4)
+  s1=sd(x)
+  sdskew=sqrt( 6*w*(w-1) / ((w-2)*(w+1)*(w+3)) )
+  sdkurtosis=sqrt( 4*(w^2-1) * sdskew^2 / ((w-3)*(w+5)) )
+  return(sdkurtosis)
+}
+
+```
+
+```{r}
+dataset %>%
+  dplyr::select(interval,ratio) %>%
+  dplyr::summarise_each(funs(class = class
+                             , valid = sum(!is.na(.),na.rm = TRUE)
+                             , missing = sum(is.na(.))
+                             , misspercent = scales::percent(round(sum(is.na(.))/sum(!is.na(.),na.rm = TRUE),2))
+                             , min = min(.,na.rm = TRUE)
+                             , q25 = quantile(., 0.25,na.rm = TRUE)
+                             , median = median(.,na.rm = TRUE)
+                             , q75 = quantile(., 0.75,na.rm = TRUE)
+                             , max = max(.,na.rm = TRUE)
+                             , range = diff(range(.))
+                             , mean = round(mean(.,na.rm = TRUE),2)
+                             , sd = round(sd(.,na.rm = TRUE),2)
+                             , variance = round(var(.,na.rm = TRUE),2)
+                             , skewness = round(skewFunct(.,na.rm = TRUE),2)
+                             , SEskewness = round(SEskewFunct(.,na.rm = TRUE),2)
+                             , kurtosis = round(kurtosisFunct(.,na.rm = TRUE),2)
+                             , SEkurtosis = round(SEkurtosisFunct(.,na.rm = TRUE),2)
+                             , ShapWilk = ifelse(sd(.)!=0,round(shapiro.test(.)$statistic,2),NA)
+                             , ShapWilkp = ifelse(sd(.)!=0,round(shapiro.test(.)$p.value,2),NA))) %>%
+  tidyr::gather(stat,val) %>%
+  tidyr::separate(stat, into = c("var", "stat"), sep = "_") %>%
+  tidyr::spread(stat, val) %>%
+  dplyr::select(var
+                , class
+                , valid
+                , missing
+                , misspercent
+                , min
+                , q25
+                , median
+                , q75
+                , max
+                , range
+                , mean
+                , sd
+                , variance
+                , skewness
+                , SEskewness
+                , kurtosis
+                , SEkurtosis
+                , ShapWilk
+                , ShapWilkp) %>% # reorder
+  print()
+```
+```{r}
+dataset %>%
+  dplyr::select(nominal, ordinal) %>%
+  dplyr::summarise_each(funs(class = class
+                             , valid = sum(!is.na(.),na.rm = TRUE)
+                             , missing = sum(is.na(.))
+                             , misspercent = scales::percent(round(sum(is.na(.))/sum(!is.na(.),na.rm = TRUE),2))
+                             , cats = n_distinct)) %>%
+  tidyr::gather(stat,val) %>%
+  tidyr::separate(stat, into = c("var", "stat"), sep = "_") %>%
+  tidyr::spread(stat, val) %>%
+  dplyr::select(var
+                , class
+                , valid
+                , missing
+                , misspercent
+                , cats) %>% # reorder
+  print()
+```
+```{r}
+# https://beta.rstudioconnect.com/content/3350/dplyr_tutorial.html
+dataset %>%
+    dplyr::group_by(nominal) %>%
+    dplyr::summarize(frequency = n()) %>%
+    dplyr::arrange(desc(frequency)) %>%
+    dplyr::mutate(relative_frequency = frequency/sum(frequency),
+           relative_cumulative_frequency = cumsum(relative_frequency),
+           relative_frequency = round(100*relative_frequency,2),
+           relative_cumulative_frequency = round(100*relative_cumulative_frequency,2),
+           nr = row_number(-frequency)) %>%
+    dplyr::select(nr, everything())
+```
+```{r}
+# https://cran.r-project.org/web/packages/AMR/vignettes/freq.html
+summarytools::freq(dataset[c("nominal","ordinal")])
+```
+```{r}
+summarytools::descr(dataset[c("interval","ratio")])
+```
+```{r}
+# https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html
+view(dfSummary(dataset, plain.ascii = FALSE, style = "grid", 
+          graph.magnif = 0.75, valid.col = FALSE, tmp.img.dir = "/tmp"))
+```
+
+
+
+
+
+
+```{r}
+dataset %>% 
+    dplyr::summarise_all(class) %>% 
+    tidyr::gather(variable, class)
+```
+```{r}
+ggplot(data=dataset, aes(x=nominal)) + 
+  geom_bar(stat="count")
+```
+```{r}
+ggplot(data=dataset, aes(x=ordinal)) +
+  geom_bar(aes(y = (..count..)/sum(..count..)))
+```
+```{r}
+ggplot(data=dataset, aes(x= "", y = interval)) +
+  geom_boxplot()
+```
+```{r}
+ggplot(data=dataset, aes(x=ratio)) +
+  geom_histogram(binwidth = .2)
+```
+```{r}
+ggplot(data=dataset, aes(x=interval, y=ratio)) + 
+  geom_point()
+```
+
+
+
+
+
+
+
 
 3) Some csv data sets may have additional characters at the beginning of the csv file which can show up in the first variable name when the data set is imported into R. (This can happen sometimes when the data are exported from Excel into a csv file.) If the first variable name has strange characters at the beginning, run the code block below to rename the first variable.
 ```{r}

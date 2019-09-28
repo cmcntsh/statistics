@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "774960397",
+    "hash" : "2539283717",
     "id" : "F9C711BF",
-    "lastKnownWriteTime" : 1569437210,
-    "last_content_update" : 1569437210907,
+    "lastKnownWriteTime" : 1569677042,
+    "last_content_update" : 1569677042547,
     "path" : "~/GitHub/statistics/materials/Week2.Rmd",
     "project_path" : "Week2.Rmd",
     "properties" : {
-        "cursorPosition" : "42,13",
-        "scrollLine" : "24"
+        "cursorPosition" : "63,245",
+        "scrollLine" : "52"
     },
     "relative_order" : 1,
     "source_on_save" : false,

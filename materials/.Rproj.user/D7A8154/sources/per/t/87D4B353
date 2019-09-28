@@ -12,15 +12,15 @@
     "path" : null,
     "project_path" : null,
     "properties" : {
-        "cacheKey" : "D4690D85",
+        "cacheKey" : "60C97CE8",
         "caption" : "dataset",
-        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=dataset&cache_key=D4690D85",
-        "displayedObservations" : 10,
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=dataset&cache_key=60C97CE8",
+        "displayedObservations" : "10",
         "environment" : "",
         "object" : "dataset",
-        "preview" : 0,
-        "totalObservations" : 10,
-        "variables" : 4
+        "preview" : "0",
+        "totalObservations" : "10",
+        "variables" : "4"
     },
     "relative_order" : 2,
     "source_on_save" : false,

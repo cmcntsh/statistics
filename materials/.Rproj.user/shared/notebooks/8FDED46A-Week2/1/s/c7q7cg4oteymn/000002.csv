@@ -1,0 +1,21 @@
+"0","summarytools::descr(dataset[c(""interval"",""ratio"")])"
+"1","Descriptive Statistics  
+
+                    interval    ratio
+----------------- ---------- --------
+             Mean      37.44    69.20
+         Std.Dev.       0.70     5.15
+              Min      36.80    63.00
+               Q1      37.00    65.50
+           Median      37.15    69.00
+               Q3      38.00    71.00
+              Max      39.00    81.00
+              MAD       0.30     4.08
+              IQR       0.83     4.88
+               CV       0.02     0.07
+         Skewness       1.03     0.91
+      SE.Skewness       0.69     0.69
+         Kurtosis      -0.34     0.12
+          N.Valid      10.00    10.00
+          % Valid     100.00   100.00
+"
