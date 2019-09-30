@@ -1,2 +1,0 @@
-"0","ggplot(data=dataset, aes(x=ordinal)) +"
-"0","  geom_bar(aes(y = (..count..)/sum(..count..)))"

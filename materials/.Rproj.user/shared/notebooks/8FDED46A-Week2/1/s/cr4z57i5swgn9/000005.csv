@@ -1,2 +1,0 @@
-"0","ggplot(data=dataset, aes(x=nominal)) + "
-"0","  geom_bar(stat=""count"")"

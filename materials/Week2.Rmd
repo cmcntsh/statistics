@@ -1,34 +1,34 @@
 ---
 title: "Week 2 R Assignment - Data exploration and cleaning"
 output:
-  word_document: default
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
+  word_document: default
 ---
 Introduction: Data needs to be examined and any problems fixed before analysis can be done.In statistics, we focus on four areas.
 
 1. Data accuracy
     + make sure data types are correct
-    + reverse code items
-    + score instruments
     + check for typos
     + check for nonsensical data
     + check categories make sense
     + correct problems if possible or delete
+    + reverse code items if needed
+    + score instruments if needed
     + keep track of what you do so you can be transparent
 2. Missing data
 3. outliers
 4. Statistical assumptions
 
-This assignment shows some steps to take to assess data accuracy and missing data.
+This assignment shows some steps to take to assess data accuracy and identify missing data.
 
 Directions: Complete each step of the assignment below.
 
 Preparation: Run the following code block to install the R packages needed for this assignment and load them into memory. (This may take a few minutes if you haven't installed the packages before. If you get any errors or warnings, try running the block another time.)
 ```{r}
 # List the packages needed
-packages <- c("tidyverse","summarytools")
+packages <- c("tidyverse","summarytools", "labelled", "openxlsx")
 
 # Check if each package is installed already. If not, install the package.
 for (i in packages){
@@ -44,101 +44,58 @@ for (i in packages){
 ```
 
 
-<<<<<<< HEAD
-1) Data files can be opened using the menus in RStudio or by executing code. Open your data file by using the menu or executing the code block below to open the Week1.csv file.
-=======
 1) Data files can be opened using the menus in RStudio or by executing code. Open your data file by using the menu or executing the code block below to open the Week1.csv file. If you use the menus, make sure to select From Text (readr)... (The code below was generated using the menu.) We will use Tidyverse packages as much as possible in this class. The readr package is a Tidyverse package.
->>>>>>> 315b8afc4c372ad18ea718902a492d25410c4fec
+
 ```{r}
 library(readr)
 dataset <- readr::read_csv(file.choose())
 View(dataset)
 ```
 
-2) A great place to start is just taking a look at the data. The three commands in the code block below all let you to take a look at what's in the data set. Uncomment one of the lines and run the code block to see what it does. Replace the comment and try one of the other commands. After you've tried all three type the name and data type for each variable in the spaces below.
+2) A great place to start is just taking a look at the data. The three commands in the code block below all let you to take a look at what's in the data set. Uncomment one of the lines and run the code block to see what it does. Replace the comment and try one of the other commands. After you've tried all three type the name and data type for each variable in the spaces below. (The data type is the short segment that comes after the name using the glimpse() or str() function.)
 a)
 b)
 c)
 d)
 ```{r}
 #View(dataset)
-#glimpse(dataset)
+dplyr::glimpse(dataset) # dplyr is part of the Tidyverse packages
 #str(dataset)
 ```
-3) The glimpse() and str() functions give you abbreviations for the data types. Run the code block below to see the data type for the data set and each column.R tries to guess the data type when you import data. It did a good job of identifying 
+3) The glimpse() and str() functions give you abbreviations for the data types. Run the code block below to see the data type for the data set and each column.R tries to guess the data type when you import data. It did a good job of identifying numerical variables interval and ratio. Variables with letters in the values get types as character variables.
 ```{r}
-class(dataset)
-class(dataset$nominal)
-class(dataset$ordinal)
-class(dataset$interval)
-class(dataset$ratio)
+# See column information
+dataset %>%
+  dplyr::summarise_all(class) %>%
+  tidyr::gather(variable, class)
+
+```
+4) The readr package doesn't automatically convert columns with strings to factors. We need to convert the nominal and ordinal variables to factors and set the order of the levels for the ordinal variable. (R puts factor levels in alphabetical order if an order is not specified.) If you run #3 again after you execute the following code block, you'll see the class has changed for nominal and ordinal. What are the levels for the two factors (categorical variables) in the data set?
+a) nominal - 
+b) ordinal - 
+```{r}
+dataset <- dataset %>% mutate(nominal = as.factor(nominal))
+levels(dataset$nominal)
+dataset <- dataset %>% mutate(ordinal = as.factor(ordinal))
+levels(dataset$ordinal)
+# These could have been done on a single line.
+# dataset <- dataset %>% mutate_at(vars(nominal, ordinal), factor)
+dataset <- dataset %>% mutate(ordinal = fct_relevel(ordinal,"first","second","third","fourth"))
+levels(dataset$ordinal)
+```
+5) Now that all the variables in the dataset have the correct class set (based on level of measurement) we can review each variable to look for other errors. Use the View() function (or just click on the dataset object in the Environment tab to the right) to check over the variables. Do you see any misspellings, unreasonable values, or missing data? If you click on the variable name at the top of the column, RStudio sorts the column. It's really useful for finding really high, low, or missing values. Try it out for each column. Note any problems in a) below.
+a)
+```{r}
+View(dataset)
 ```
 
 
-```{r}
-spssSkewKurtosis=function(x) {
-  w=length(x)
-  m1=mean(x)
-  m2=sum((x-m1)^2)
-  m3=sum((x-m1)^3)
-  m4=sum((x-m1)^4)
-  s1=sd(x)
-  skew=w*m3/(w-1)/(w-2)/s1^3
-  sdskew=sqrt( 6*w*(w-1) / ((w-2)*(w+1)*(w+3)) )
-  kurtosis=(w*(w+1)*m4 - 3*m2^2*(w-1)) / ((w-1)*(w-2)*(w-3)*s1^4)
-  sdkurtosis=sqrt( 4*(w^2-1) * sdskew^2 / ((w-3)*(w+5)) )
-  mat=matrix(c(skew,kurtosis, sdskew,sdkurtosis), 2,
-        dimnames=list(c("skew","kurtosis"), c("estimate","se")))
-  return(mat)
-}
+6) After a visual inspection it's a good idea to explore the data using some descriptive statistics. Run the following code block to look at descriptive statistics for the two numeric variables (interval, ratio). List how many valid items exist for each variable. List how many missing items for each variable.
+a) interval
+b) ratio
 
-spssSkewKurtosis(dataset$interval)
-spssSkewKurtosis(dataset$interval)[1,1]
-
-# http://www.stat.cmu.edu/~hseltman/files/spssSkewKurtosis.R
-skewFunct=function(x, na.rm=FALSE){
-  w = ifelse(na.rm==TRUE,length(x)-sum(is.na(x),na.rm=TRUE),length(x))
-  m1=mean(x,na.rm=na.rm)
-  m2=sum((x-m1)^2,na.rm=na.rm)
-  m3=sum((x-m1)^3,na.rm=na.rm)
-  m4=sum((x-m1)^4,na.rm=na.rm)
-  s1=sd(x,na.rm=na.rm)
-  skew=w*m3/(w-1)/(w-2)/s1^3
-  return(skew)
-}
-kurtosisFunct=function(x, na.rm=FALSE){
-  w = ifelse(na.rm==TRUE,length(x)-sum(is.na(x),na.rm=TRUE),length(x))
-  m1=mean(x)
-  m2=sum((x-m1)^2)
-  m3=sum((x-m1)^3)
-  m4=sum((x-m1)^4)
-  s1=sd(x)
-  kurtosis=(w*(w+1)*m4 - 3*m2^2*(w-1)) / ((w-1)*(w-2)*(w-3)*s1^4)
-  return(kurtosis)
-}
-SEskewFunct=function(x, na.rm=FALSE){
-  w = ifelse(na.rm==TRUE,length(x)-sum(is.na(x),na.rm=TRUE),length(x))
-  m1=mean(x)
-  m2=sum((x-m1)^2)
-  m3=sum((x-m1)^3)
-  m4=sum((x-m1)^4)
-  s1=sd(x)
-  sdskew=sqrt( 6*w*(w-1) / ((w-2)*(w+1)*(w+3)) )                          
-  return(sdskew)
-}
-SEkurtosisFunct=function(x, na.rm=FALSE){
-  w = ifelse(na.rm==TRUE,length(x)-sum(is.na(x),na.rm=TRUE),length(x))
-  m1=mean(x)
-  m2=sum((x-m1)^2)
-  m3=sum((x-m1)^3)
-  m4=sum((x-m1)^4)
-  s1=sd(x)
-  sdskew=sqrt( 6*w*(w-1) / ((w-2)*(w+1)*(w+3)) )
-  sdkurtosis=sqrt( 4*(w^2-1) * sdskew^2 / ((w-3)*(w+5)) )
-  return(sdkurtosis)
-}
-
-```
+Does that match what you see with your visual inspection using View()? (yes or no)
+a) 
 
 ```{r}
 dataset %>%
@@ -146,7 +103,8 @@ dataset %>%
   dplyr::summarise_each(funs(class = class
                              , valid = sum(!is.na(.),na.rm = TRUE)
                              , missing = sum(is.na(.))
-                             , misspercent = scales::percent(round(sum(is.na(.))/sum(!is.na(.),na.rm = TRUE),2))
+                             , misspercent = scales::percent(round(sum(is.na(.))/sum(!is.na(.)
+                                                                                     ,na.rm = TRUE),2))
                              , min = min(.,na.rm = TRUE)
                              , q25 = quantile(., 0.25,na.rm = TRUE)
                              , median = median(.,na.rm = TRUE)
@@ -156,10 +114,6 @@ dataset %>%
                              , mean = round(mean(.,na.rm = TRUE),2)
                              , sd = round(sd(.,na.rm = TRUE),2)
                              , variance = round(var(.,na.rm = TRUE),2)
-                             , skewness = round(skewFunct(.,na.rm = TRUE),2)
-                             , SEskewness = round(SEskewFunct(.,na.rm = TRUE),2)
-                             , kurtosis = round(kurtosisFunct(.,na.rm = TRUE),2)
-                             , SEkurtosis = round(SEkurtosisFunct(.,na.rm = TRUE),2)
                              , ShapWilk = ifelse(sd(.)!=0,round(shapiro.test(.)$statistic,2),NA)
                              , ShapWilkp = ifelse(sd(.)!=0,round(shapiro.test(.)$p.value,2),NA))) %>%
   tidyr::gather(stat,val) %>%
@@ -179,21 +133,19 @@ dataset %>%
                 , mean
                 , sd
                 , variance
-                , skewness
-                , SEskewness
-                , kurtosis
-                , SEkurtosis
                 , ShapWilk
                 , ShapWilkp) %>% # reorder
   print()
 ```
+7) Here's a similar code blook looking at some descriptive statistics for the factor variables. (nominal, ordinal).
 ```{r}
 dataset %>%
   dplyr::select(nominal, ordinal) %>%
   dplyr::summarise_each(funs(class = class
                              , valid = sum(!is.na(.),na.rm = TRUE)
                              , missing = sum(is.na(.))
-                             , misspercent = scales::percent(round(sum(is.na(.))/sum(!is.na(.),na.rm = TRUE),2))
+                             , misspercent = scales::percent(round(sum(is.na(.))/sum(!is.na(.)
+                                                                                     ,na.rm = TRUE),2))
                              , cats = n_distinct)) %>%
   tidyr::gather(stat,val) %>%
   tidyr::separate(stat, into = c("var", "stat"), sep = "_") %>%
@@ -206,6 +158,7 @@ dataset %>%
                 , cats) %>% # reorder
   print()
 ```
+8) Here's some code to calculate descriptive statistics for the nominal factor.
 ```{r}
 # https://beta.rstudioconnect.com/content/3350/dplyr_tutorial.html
 dataset %>%
@@ -219,29 +172,23 @@ dataset %>%
            nr = row_number(-frequency)) %>%
     dplyr::select(nr, everything())
 ```
+9) Using functions from the dplyr package allows you a lot of control over what you can see in your data. I didn't find any Tidyverse packages which report common descriptive statistics without manually coding the desired functions. From this point out, we'll use another package called summarytools to get most of our descriptive statistics. The freq() function is what you should use for categorical variables (factors) like nominal and ordinal. Run the following code block.
 ```{r}
 # https://cran.r-project.org/web/packages/AMR/vignettes/freq.html
 summarytools::freq(dataset[c("nominal","ordinal")])
 ```
+10) The descr() function is what you should use for continuous variables (numeric) like interval and ratio. Run the following code block.
 ```{r}
 summarytools::descr(dataset[c("interval","ratio")])
 ```
+11) The summarytools packages also has a function for getting a quick overview of an entire data set. Run the following code block. you should see a new item appear in the Viewer window to the right in RStudio.
 ```{r}
 # https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html
-view(dfSummary(dataset, plain.ascii = FALSE, style = "grid", 
-          graph.magnif = 0.75, valid.col = FALSE, tmp.img.dir = "/tmp"))
+#view(dfSummary(dataset, plain.ascii = FALSE, style = "grid", 
+#          graph.magnif = 0.75, valid.col = FALSE, tmp.img.dir = "/tmp"))
+view(dfSummary(dataset))
 ```
-
-
-
-
-
-
-```{r}
-dataset %>% 
-    dplyr::summarise_all(class) %>% 
-    tidyr::gather(variable, class)
-```
+12) Plots should also be used to explore your data while data cleaning. Run the following code blocks to see examples of plots for each variable type.
 ```{r}
 ggplot(data=dataset, aes(x=nominal)) + 
   geom_bar(stat="count")
@@ -263,175 +210,31 @@ ggplot(data=dataset, aes(x=interval, y=ratio)) +
   geom_point()
 ```
 
-
-
-
-
-
-
-
-3) Some csv data sets may have additional characters at the beginning of the csv file which can show up in the first variable name when the data set is imported into R. (This can happen sometimes when the data are exported from Excel into a csv file.) If the first variable name has strange characters at the beginning, run the code block below to rename the first variable.
+13) The ggplot2 function qplot() is a quick way to make plots. Run the following block of code to create plots for all the variables using qplot(). Answer the following question. (Type your answer below.) What are advantages/disadvantages to using qplot?
+a) Advantages - 
+b) Disadvantages - 
 ```{r}
-colnames(data)[1] <- "nominal"
-names(data)
+qplot(dataset$nominal)
+qplot(dataset$ordinal)
+qplot(dataset$interval)
+qplot(dataset$ratio)
+qplot(dataset$nominal,dataset$ratio)
 ```
 
-4) Run the following code block and answer the following question. Type the variable name and the variable class for each of the variables in the data set. (The first one is done for you.)
-a) nominal - factor (levels: female, male)
-b) 
-c)
-d)
+14) You can export your data set to a csv file. Save your data by running the following code block. After you run the code block, navigate to the folder and make sure the new file has been saved.Saving to a csv only saves the variables and the data. It does not save changes we made like converting the nominal and ordinal variables to factors.
 ```{r}
-class(data)
-class(data$nominal)
-levels(data$nominal)
-class(data$ordinal)
-levels(data$ordinal)
-class(data$interval)
-class(data$ratio)
+readr::write_csv(dataset, path = "Week2data.csv")
 ```
 
-5) The variable named ordinal is ordinal level of measurement. When R imports text columns it interprets the column as a factor, but it doesn't know the variable is supposed to be ordered. Run the following code block to make the variable ordinal and reorder the levels.
+15) You can export data objects to another format which preserves formatting. The csv file is useful for exporting data which can be opened by other programs like Excel and SPSS.The rds file should be used when you know you will use the data in R and you want to preserve the formatting. You can save data in formats for some other statistical software like SPSS. Run the following code block to save the data set as in rds file and an SPSS sav file.
 ```{r}
-data$ordinal <- factor(data$ordinal, ordered=TRUE, levels = c("first","second","third","fourth"))
-class(data$ordinal)
-levels(data$ordinal)
-```
-
-6) Run the following code block to create a bar chart for the variable nominal. How many people are in each level of nominal? (Type your answers below.)
-a) female - 
-b) male - 
-```{r}
-countNom <- table(data$nominal)
-barplot(countNom)
-```
-
-7) Run the following code block to create a bar chart for the variable ordinal. How many people are in each level of ordnial? (Type your answers below.)
-a) first - 
-b) second - 
-c) third - 
-d) fourth - 
-```{r}
-countOrd <- table(data$ordinal)
-barplot(countOrd)
-```
-
-8) Run the following code block to create a box plot and histogram for the variable interval. Answer the following questions. Type your answers below. The first one is done for you.
-a) What is the minimum value? - 36.8
-b) What is the maximum value? - 
-c) What is the median? - 
-d) What is the value of the first quartile? - 
-e) What is the value of the third quartile? - 
-f) Are there any outliers showing on either of the plots? If so, which one? - 
-```{r}
-boxplot(data$interval)
-text(y=fivenum(data$interval), labels =fivenum(data$interval), x=1.25)
-
-hist(data$interval)
-```
-
-9) Run the following code block to create a box plot and histogram for the variable ratio. Answer the following questions. Type your answers below. The first one is done for you.
-a) What is the minimum value? - 63
-b) What is the maximum value? - 
-c) What is the median? - 
-d) What is the value of the first quartile? - 
-e) What is the value of the third quartile? - 
-f) Are there any outliers showing on either of the plots? If so, which one? - 
-```{r}
-boxplot(data$ratio)
-text(y=fivenum(data$ratio), labels =fivenum(data$ratio), x=1.25)
-
-hist(data$ratio, xlim=c(60,85), breaks=seq(60,85,by=1))
-```
-
-10) Run the following code block to create a scatter plot using interval and ratio variables.
-```{r}
-plot(data$interval, data$ratio)
+# Example of how to save several formats.
+readr::write_rds(dataset, path = "week2data.rds")
+haven::write_sav(dataset, path = "week2data.sav")
+openxlsx::write.xlsx(dataset, file = "week2data.xlsx")
 
 ```
 
-11) Run the following block of code to create plots for all the variables using qplot(). Answer the following question. (Type your answer below.)
-a) Are there any advantages to using qplot? - 
-```{r}
-qplot(data$nominal)
-qplot(data$ordinal)
-qplot(data$interval)
-qplot(data$ratio)
-qplot(data$nominal,data$ratio)
-```
-
-12) Explore your data frame data using the summarytools package. Run the following block of code to see an overview of each of the variables in your data frame.This is a quick and easy way to get an overview of the variables in your data set.
-```{r}
-view(dfSummary(data))
-```
-
-13) Run the following code block to add labels to the variables in your data set and check out the labels now present using dfSummary().
-```{r}
-library(Hmisc)
-var.labels <- c(nominal="sex", ordinal="birth order",interval="temperature in Celsius", ratio="height in inches")
-label(data) = as.list(var.labels[match(names(data),names(var.labels))])
-
-view(dfSummary(data))
-```
-
-14) Run the following code block and answer the following questions. (Type your answers below.)
-a) What are the levels of the variable data$nomnial? - 
-b) What is the logical result when you test to see if the data$nominal variable is male for the observations that are female? - 
-c) What is the logical result when you test to see if the data$nominal variable is male for the observations that are male? - 
-d) What is the result when you add the as.numeric() function to the test? - 
-```{r}
-data$nominal
-temp <- data$nominal=="male"
-temp
-temp <- as.numeric(data$nominal=="male")
-temp
-```
-
-15) Attach the values in the temp variable to the data frame by running the following code block.
-
-```{r}
-data$gender_recode <- temp
-
-class(data$gender_recode)
 
 
-```
-
-16) Run the following code block to convert the new gender_recode variable to a factor. Examine the data frame using dfSummary() and answer the following question.
-a) What is the class of data$gender_recode? - 
-b) What are the levels of data$gender_recode? - 
-```{r}
-data$gender_recode <- factor(data$gender_recode)
-
-view(dfSummary(data))
-```
-
-17) Change your working directory by using the menus in RStudio. RStudio - Session - Set Working Directory - Choose Directory... Navigate to the directoy where you want to save the assignments for this class. Save your data frame by running the following code block. After you run the code block, navigate to the folder and make sure the new file has been saved.
-```{r}
-write.csv(data, file = "Week2data.csv")
-```
-
-While you are working on your analysis, your coworker asks you for some help getting some descriptive statistics for a set of numbers and building a boxplot. The data are: [2,4,6,8,10]. Your co-worker read of a useful function for descriptive statistics, but wasn't sure how to get the package to run. The function is called stat.desc() and it's in the pastecs package. Run the following code block to help your coworker. Help your coworker answer the following questions.
-a) What is the mean? - 
-b) What is the median? - 
-c) What is the minimum? - 
-d) What is the maximum? - 
-e) What is the range? - 
-f) What is the first quartile? - 
-g) What is the third quartile? - 
-```{r}
-#install.packages("pastecs") # uncomment this line if you need to install package
-
-library(pastecs) # loads the package into memory
-
-temp1 <- c(2,4,6,8,10) # puts the numbers into a variable
-temp1 # shows the values in the variable
-
-stat.desc(temp1) # get descriptive statistics for the variable
-summary(temp1) # get summary statistics for the variable.
-
-boxplot(temp1) # creates a box plot for the variable
-```
-
-
-18) Save this assignment as an Rmd file by using the RStudio menus. RStudio - File - Save As... Name the file Week2completedYourName. Turn in your Rmd file and your csv file you just saved.
+16) Save this assignment as an Rmd file by using the RStudio menus. RStudio - File - Save As... Name the file Week2completedYourName. Turn in your Rmd file and your rds file you just saved.
