@@ -1,3 +1,25 @@
+########## Code for working with R packages ##########
+
+# Manage R packages
+# List the packages needed
+packages <- c("tidyverse","summarytools")
+
+# Check if each package is installed already. If not, install the package.
+for (i in packages){
+  if(! i %in% installed.packages()){
+    install.packages(i,dependencies = TRUE)
+  }
+  # Show each package that is checked.
+  print(i)
+  
+  # Load each package into memory so we can use it.
+  library(i,character.only=TRUE)
+}
+
+
+
+########## Code for data exploration ##########
+
 # Skewness and Kurtosis like SPSS
 # http://www.stat.cmu.edu/~hseltman/files/spssSkewKurtosis.R
 spssSkewKurtosis=function(x) {
@@ -107,3 +129,37 @@ dataset %>%
                 , ShapWilk
                 , ShapWilkp) %>% # reorder
   print()
+
+
+# Start of some code for looking at descriptive statistics for categorical variables
+dataset %>%
+  dplyr::select(nominal, ordinal) %>%
+  dplyr::summarise_each(funs(class = class
+                             , valid = sum(!is.na(.),na.rm = TRUE)
+                             , missing = sum(is.na(.))
+                             , misspercent = scales::percent(round(sum(is.na(.))/sum(!is.na(.)
+                                                                                     ,na.rm = TRUE),2))
+                             , cats = n_distinct)) %>%
+  tidyr::gather(stat,val) %>%
+  tidyr::separate(stat, into = c("var", "stat"), sep = "_") %>%
+  tidyr::spread(stat, val) %>%
+  dplyr::select(var
+                , class
+                , valid
+                , missing
+                , misspercent
+                , cats) %>% # reorder
+  print()
+
+# https://beta.rstudioconnect.com/content/3350/dplyr_tutorial.html
+dataset %>%
+  dplyr::group_by(nominal) %>%
+  dplyr::summarize(frequency = n()) %>%
+  dplyr::arrange(desc(frequency)) %>%
+  dplyr::mutate(relative_frequency = frequency/sum(frequency),
+                relative_cumulative_frequency = cumsum(relative_frequency),
+                relative_frequency = round(100*relative_frequency,2),
+                relative_cumulative_frequency = round(100*relative_cumulative_frequency,2),
+                nr = row_number(-frequency)) %>%
+  dplyr::select(nr, everything())
+
