@@ -1,12 +1,10 @@
 ---
 title: "Week 2 R Assignment - Data exploration and cleaning"
-output:
-  html_document:
-    df_print: paged
-  pdf_document: default
-  word_document: default
+output: html_document
+
 ---
-Introduction: Data needs to be examined and any problems fixed before analysis can be done.In statistics, we focus on four areas.
+## Introduction:
+Data needs to be examined and any problems fixed before analysis can be done.In statistics, we focus on four areas.
 
 1. Data accuracy
     + make sure data types are correct
@@ -23,9 +21,11 @@ Introduction: Data needs to be examined and any problems fixed before analysis c
 
 This assignment shows some steps to take to assess data accuracy and identify missing data.
 
-Directions: Complete each step of the assignment below.
+## Directions:
+Complete each step of the assignment below.
 
-Preparation: Run the following code block to install the R packages needed for this assignment and load them into memory. (This may take a few minutes if you haven't installed the packages before. If you get any errors or warnings, try running the block another time.)
+## 1. Install/Load needed packages
+Run the following code block to install the R packages needed for this assignment and load them into memory. (This may take a few minutes if you haven't installed the packages before. If you get any errors or warnings, try running the block another time.)
 ```{r}
 # List the packages needed
 packages <- c("tidyverse","summarytools", "labelled", "openxlsx")

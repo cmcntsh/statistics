@@ -1,0 +1,191 @@
+---
+title: "NURS 6075 Week 2 R Assignment"
+output: html_notebook
+---
+
+#  Data exploration
+
+#### What is your name?
+Type your name here: 
+
+## Introduction:
+Data needs to be examined and any problems fixed before analysis can be done.In statistics, we focus on four areas.
+
+1. Data accuracy
+    + make sure data types are correct
+    + check for typos
+    + check for nonsensical data
+    + check categories make sense
+    + correct problems if possible or delete
+    + reverse code items if needed
+    + score instruments if needed
+    + keep track of what you do so you can be transparent
+2. Missing data
+3. outliers
+4. Statistical assumptions
+
+This assignment shows some steps to take to assess data accuracy and identify missing data.
+
+This assignment is written as an Rmarkdown file and can be used to generate formatted output. You can try it out now by clicking the Preview (or Knit) button at the top of this window. Some of the output will look better in the popup window than it will when you run the code blocks here. It might be helpful to generate that window by hitting the button again as you work through some of the steps of this assignment. (Especially on #7.)
+
+One of the advantages of this output is it includes the code with the output. If you ever need to recreate an analysis in the future, it's probably more important to have a record of the code used than the actual output. (Always save your code with your data file(s).)
+
+## Directions:
+Complete each step of the assignment below.
+
+## Install/Load needed packages
+Run the following code block to install the R packages needed for this assignment and load them into memory. (This may take a few minutes if you haven't installed the packages before. If you get any errors or warnings, try running the block another time.)
+```{r}
+# List the packages needed
+packages <- c("tidyverse","summarytools", "labelled", "openxlsx", "rio")
+
+# Check if each package is installed already. If not, install the package.
+for (i in packages){
+  if(! i %in% installed.packages()){
+    install.packages(i,dependencies = TRUE)
+  }
+  # Show each package that is checked.
+  print(i)
+  
+  # Load each package into memory so we can use it.
+  library(i,character.only=TRUE)
+}
+```
+## Open data file
+Data files can be opened using the menus in RStudio or by executing code. Open your data file by using the menu or executing the code block below to open the Week1.csv file. If you use the menus, make sure to select From Text (readr)... (The code below was generated using the menu.) We will use Tidyverse packages as much as possible in this class. The readr package is a Tidyverse package. The rio packages tries to make data import and export simple. The following code block uses the rio import() function.
+
+```{r}
+# https://cran.r-project.org/web/packages/rio/vignettes/rio.html
+library(rio)
+dataset <- rio::import(file.choose())
+```
+## Examine the dataset
+A great place to start is just taking a look at the data. The three commands in the code block below all let you to take a look at what's in the data set. Uncomment one of the lines and run the code block to see what it does. Replace the comment and try one of the other commands. 
+
+#### After you've tried all three type the name and data type for each variable in the spaces below.
+(The data type is the short segment that comes after the name using the glimpse() or str() function.)  
+  
+* Variable: 
+* Variable: 
+* Variable: 
+* Variable: 
+```{r}
+View(dataset)
+#dplyr::glimpse(dataset) # dplyr is part of the Tidyverse packages
+#str(dataset)
+```
+## Examine column types
+The glimpse() and str() functions give you abbreviations for the data types. Run the code block below to see the data type for each column. R tries to guess the data type when you import data. It did a good job of identifying numerical variables interval and ratio. Variables with letters in the values get types as character variables.
+```{r}
+# See column information
+dataset %>%
+  dplyr::summarise_all(class) %>%
+  tidyr::gather(variable, class)
+
+```
+## Convert factors
+The readr package doesn't automatically convert columns with strings to factors. We need to convert the nominal and ordinal variables to factors and set the order of the levels for the ordinal variable. (R puts factor levels in alphabetical order if an order is not specified.) If you run #3 again after you execute the following code block, you'll see the class has changed for nominal and ordinal. 
+
+#### What are the levels for the two factors (categorical variables) in the data set?  
+  
+* nominal: 
+* ordinal: 
+```{r}
+# https://suzan.rbind.io/2018/02/dplyr-tutorial-2/#working-with-discrete-columns
+dataset <- dataset %>% mutate(nominal = as.factor(nominal))
+levels(dataset$nominal)
+dataset <- dataset %>% mutate(ordinal = as.factor(ordinal))
+levels(dataset$ordinal)
+# These could have been done on a single line.
+# dataset <- dataset %>% mutate_at(vars(nominal, ordinal), factor)
+
+# Correct order can be specified for ordinal factors.
+dataset <- dataset %>% mutate(ordinal = recode_factor(ordinal,"first"="first","second"="second","third"="third","fourth"="fourth",.ordered=TRUE))
+levels(dataset$ordinal)
+```
+## Visual inspection
+Now that all the variables in the dataset have the correct class set (based on level of measurement) we can review each variable to look for other errors. Use the View() function (or just click on the dataset object in the Environment tab to the right in RStudio) to check over the variables. Do you see any misspellings, unreasonable values, or missing data? If you click on the variable name at the top of the column, RStudio sorts the column. It's really useful for finding really high, low, or missing values. Try it out for each column. 
+
+#### Note any problems below.  
+  
+* Problems: 
+```{r}
+View(dataset)
+```
+## Use descripive statistics
+After a visual inspection it's a good idea to explore the data using some descriptive statistics. Using functions from the dplyr package allows you a lot of control over what you can see in your data. I didn't find any Tidyverse packages which report common descriptive statistics without manually coding the desired functions. From this point out, we'll use another package called summarytools to get most of our descriptive statistics.
+
+### Categorical variables
+The freq() function is what you should use for categorical variables (factors) like nominal and ordinal. Run the following code block.
+```{r}
+# https://cran.r-project.org/web/packages/AMR/vignettes/freq.html
+summarytools::freq(dataset[c("nominal","ordinal")])
+```
+### Continuous variables
+The descr() function is what you should use for continuous variables (numeric) like interval and ratio. Run the following code block.
+```{r}
+summarytools::descr(dataset[c("interval","ratio")])
+```
+### Summarizing all the data quickly with dfSummary()
+The summarytools packages also has a function for getting a quick overview of an entire data set. Run the following code block. you should see a new item appear in the Viewer window to the right in RStudio.
+```{r, results='asis'}
+# https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html
+dfSummary(dataset, plain.ascii = FALSE, style = "grid", 
+          graph.magnif = 0.75, valid.col = FALSE, tmp.img.dir = "/tmp")
+#view(dfSummary(dataset))
+```
+## Plots
+
+### ggplot2 ggplot function
+Plots can also be used to explore your data while data cleaning. While the dfSummary function provides a quick look at variables, sometimes you may want to run specific plots for different purposes. The ggplot2 package is a Tidyverse package whith many types of plots. Run the following code blocks to see examples of plots for each variable type. (There are also many others.)
+```{r}
+ggplot(data=dataset, aes(x=nominal)) + 
+  geom_bar(stat="count")
+```
+```{r}
+ggplot(data=dataset, aes(x=ordinal)) +
+  geom_bar(aes(y = (..count..)/sum(..count..)))
+```
+```{r}
+ggplot(data=dataset, aes(x= "", y = interval)) +
+  geom_boxplot()
+```
+```{r}
+ggplot(data=dataset, aes(x=ratio)) +
+  geom_histogram(binwidth = .2)
+```
+```{r}
+ggplot(data=dataset, aes(x=interval, y=ratio)) + 
+  geom_point()
+```
+### ggplot2 qplot function
+The ggplot2 function qplot() is a quick way to make plots. Run the following block of code to create plots for all the variables using qplot(). 
+```{r}
+qplot(dataset$nominal)
+qplot(dataset$ordinal)
+qplot(dataset$interval)
+qplot(dataset$ratio)
+qplot(dataset$nominal,dataset$ratio)
+```
+## Feedback
+
+#### What did you think of this assignment?
+Answer:
+
+#### What would you change?
+Answer:
+
+## Save your output.
+Save this assignment as an html file by following these steps:
+
+1. Click the preview or knit button at the top of this window.
+    + A popup should appear with all the output for the assignment.
+2. Click the Open in Browser button at the top of that window.
+    + Your output should open up in your web browser.
+3. Save the page in the web browser.
+    + Usually you can right click and select save as...
+    + Or select save as from the browser menu
+    
+## Submit your assignment.
+Submit the output you just saved for your assignment.
+
