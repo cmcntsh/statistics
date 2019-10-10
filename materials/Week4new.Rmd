@@ -1,0 +1,179 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+#  Jamovi and jmv package
+
+#### What is your name?
+Type your name here: 
+
+## Introduction:
+We have learned some steps to prepare data for a statistical analysis. Those steps include checking: 
+
+1. Data accuracy
+    + make sure data types are correct
+    + check for typos
+    + check for nonsensical data
+    + check categories make sense
+    + correct problems if possible or delete
+    + reverse code items if needed
+    + score instruments if needed
+    + keep track of what you do so you can be transparent
+2. Missing data
+3. outliers
+4. Statistical assumptions
+
+To prepare for conducting statistical tests we're going to learn about the JAMOVI application and the jmv R package.
+
+## Directions:
+Complete each step of the assignment below.
+
+## Install/Load needed packages
+Run the following code block to install the R packages needed for this assignment and load them into memory. (This may take a few minutes if you haven't installed the packages before. If you get any errors or warnings, try running the block another time.)
+```{r}
+# List the packages needed
+packages <- c("tidyverse","summarytools", "rio", "jmv")
+
+# Check if each package is installed already. If not, install the package.
+for (i in packages){
+  if(! i %in% installed.packages()){
+    install.packages(i,dependencies = TRUE)
+  }
+  # Show each package that is checked.
+  print(i)
+  
+  # Load each package into memory so we can use it.
+  library(i,character.only=TRUE)
+}
+```
+## Open data file
+Data files can be opened using the menus in RStudio or by executing code. Open your data file by using the menu or executing the code block below to open the Week4.rds file. If you use the menus, make sure to select From Text (readr)... (The code below was generated using the menu.) We will use Tidyverse packages as much as possible in this class. The readr package is a Tidyverse package. The rio packages tries to make data import and export simple. The following code block uses the rio import() function.
+
+```{r, eval=FALSE}
+# https://cran.r-project.org/web/packages/rio/vignettes/rio.html
+library(rio)
+dataset <- rio::import(file.choose())
+```
+## Install Jamovi application
+The jmv package contains the statistical analyses we'll be using the rest of the semester. Jamovi is a statistical application built on top of R. We'll be using the Jamovi application in conjunction with RStudio to run and report our statistical analyses. Download and install the appropriate Jamovi version for your computer. https://www.jamovi.org/download.html (I installed the solid version for Windows.)
+
+## Open Jamovi
+Once the download and install is complete, open Jamovi.
+
+## Open the dataset in Jamovi
+In the Jamovi window you should see 3 horizontal lines at the top left of the window. Click on the icon to open the Jamovi file menu. (From now on we'll just call that icon and menu the file menu.) To open a data file go to File - Import - Browse 
+Navigate to where you saved your data file and open Week4.rds.
+
+## Examine the data in Jamovi
+You should see some data in the left side window which looks like a spreadsheet. We can look at the data more closely in the Data window. 
+
+1. Click on the Data menu at the top left of the window.
+2. My version of Jamovi opened the data file but left three columns (A,B,C) at the beginning of the data. I just delete those by clicking on the column head and clicking on the Delete icon in the variables section.
+3. You can see more about each variable by clicking on the variable name in the spreadsheet and clicking on the Setup icon in the variables section at the top.
+
+    + The setup section shows the variable name, the level of measurement, the data type, and the names of the levels. You can make changes to the dataset by editing the fields in the Setup section.
+    + You can navigate to different variables in the setup section by clicking on the variable name in the spreadsheet or using the arrow keys on the right and left sides of the Setup window.
+    + If you navigate all the way to the right of your data, you'll get a blank column. You can create new variables using the menus. (Go ahead and play around with it a bit. As long as you don't save over your original data file you won't hurt anyting. You can always start fresh by closing and not saving and reopening the application and the data file.)
+    
+## Exploration in Analyses
+Click on the Analyses menu at the top next to Data. Click on Exploration - Descriptives. The Descriptives analysis options will display on the left. Output will appear on the right.
+
+1. Get descriptive statistics for the categorical variables (sex, research) by dragging them to the Variables window or clicking on them to select and hitting the right arrow button. (You can also remove variables by dragging them back out or selecting them and clicking the arrow which points to the left when you click on variables in the Variables window.)
+
+    + For the categorical variables we want frequencies so click on the Frequency tables check box. (You should see new tables appear in the output.)
+    + For categorical variables we don't care about descriptive statistics like means. Remove those from the output by clicking on the Statistics bar to open it. Uncheck the boxes for Mean and Median. You can close the statistics bar by clicking on it again.
+    + You can get a bar plot for each variable by opening the Plots bar and clicking on the Bar Plot check box.
+    + You can keep the output for the categorical variables by clicking on the hide options arrow (arrow pointing to right with circle around it). The Descriptive options will disappear and the data window will show again. The output on the right will scroll up.
+    
+2. Get descriptive statistics for the continuous variables (height, weight).
+
+    + Drag the variables to the Variables window.
+    + Open the Statistics bar and check the boxes for Std. deviation and Range. (You'll see them appear in the output table.)
+    + Open the Plots bar and check the boxes for Histogram and Box plot.
+    + Keep the output by clicking on the hide options arrow.
+    
+3. Save what you've done so far.
+
+    + File (3 lines) - Save As - Navigate to where you want to save the file - Name the file Week4YourName
+    + The file will save as a Jamovi file (.omv)
+    + The file can be sent to people to share your data and output. People will need to download and install the free Jamovi application to view the contents.
+    
+## Get R code from Jamovi output
+
+You can get the R code for most of the analyses you do in Jamovi.
+
+1. Click on the three vertical dots at the top right of the Jamovi window.
+2. Click on the Syndax mode check box at the bottom of the Results section.
+3. Close the Settings window by clicking on the Hide Settings arrow at the top right of the settings menu.
+4. you should now see the R code for each of the analyses you just ran.
+
+## Run Jamovi code in RStudio
+
+1. Copy the code for the descriptive statistics for the categorical variables in Jamovi and run the code block here in RStudio.
+
+    + Right click on the code block in Jamovi.
+    + Select Syntax - Copy
+    + Paste it in the code block below.
+    + You may need to change the name of the dataset to match the name of the data frame in RStudio. data = week3 (or the name of your data frame)
+    
+```{r}
+jmv::descriptives(
+    data = week3,
+    vars = vars(height, weight),
+    hist = TRUE,
+    box = TRUE,
+    sd = TRUE,
+    range = TRUE)
+```
+
+2. Copy the code block for the descriptive statistics for the continuous variables and run it here in RStudio.
+
+```{r}
+jmv::descriptives(
+    data = week3,
+    vars = vars(sex, research),
+    freq = TRUE,
+    bar = TRUE,
+    mean = FALSE,
+    median = FALSE)
+```
+
+## Some notes on Jamovi
+
+* Some advantages of Jamovi
+
+    + Jamovi takes some of the difficulty out of remembering commands to run statistical analyses by providing point and click menus.
+    + Jamovi is freely available to anyone (and pretty easy to install) so it's easy to share output. (You can also export to other formats.)
+    + The jmv package collects basic statistical anayses into a single package so it makes learning statistics in R a bit easier.
+    + The Jamovi output is formatted very nicely. The tables are pretty much APA compliant.
+    
+* Some limitations of Jamovi
+
+    + Jamovi does not allow you to make notes or write in the output like you can in RStudio. Interpreting output is as important as getting output in the first place. Making some notes to go along with what you analyze is pretty useful and important.
+    + Jamovi does not currently have the wide variety of packages available which can be run in RStudio. It's a good idea to know both.
+    + Jamovi is still undergoing significant development. There are some parts which may still be buggy. (Like importing the data set and having the empty columns at the beginning.)
+    
+## Feedback
+
+#### What did you think of this assignment?
+Answer:
+
+#### What would you change?
+Answer:
+
+## Save your output.
+Save this assignment as an html file by following these steps:
+
+1. Click the preview or knit button at the top of this window.
+    + A popup should appear with all the output for the assignment.
+    + Or the output will appear in the Viewer pane in RStudio.
+2. Click the Open in Browser button (or Show in New Window if in Viewer pane) at the top of that window.
+    + Your output should open up in your web browser.
+3. Save the page in the web browser.
+    + Usually you can right click and select save as...
+    + Or select save as from the browser menu
+    
+## Submit your assignment.
+Submit the RStudio .html output you just saved and your Jamovi .omv file for your assignment.
+
